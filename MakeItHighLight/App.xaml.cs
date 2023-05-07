@@ -13,5 +13,6 @@ namespace MakeItHighLight
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }

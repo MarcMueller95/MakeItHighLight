@@ -7,4 +7,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Communicater\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="Images\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
