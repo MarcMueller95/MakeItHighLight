@@ -1,0 +1,74 @@
+﻿
+Die Anwendung soll beliebig viele Musikdatein importieren und in ein festgelegtes Verzeichnis das Endprodukt kopieren.
+Anhand der Meta Tags der Datein werden innerhalb dieses Verzeichnisses strukturiert Unterverzeichnisse erstellt.
+Die Hauptfunktion soll die einzelnen Datei "analysieren" und einzelne oder mehrere kurze Ausschnitte der Musikdatein 
+in ihren Zielordner kopieren. Dabei sollen diese Songauschnitte möglichst die "Highlights" der einzelnen Musikdatein darstellen.
+
+- Anwendung soll benutzerfreundlich sein und dabei folgende Tätigkeiten "Automatisieren" und Funktionen beinhalten:
+
+			- Eine Hauptansicht in dessen man dynamisch zwischen "Tabs" wechseln kann ( Parent / Child Views )
+					
+					- Start Ansicht
+					- Setting Ansicht
+					- Overview Ansicht
+					- Help & About Ansicht
+					- Import Ansicht
+					- Keine PopUps
+			
+			
+			- Hauptansicht :
+				
+				- Übersicht der einzelnen Tabs
+				- Start Button für das starten des konvertierungs Prozesses
+				- Stopp Button für das abbrechen des konvertierungs Prozesses
+				- Ladebalken der den Fortschritt des konvertierungs Prozesses wiederspiegelt
+				- Minimieren Button ( rechts Oben )
+				- Maximieren Button ( rechts Oben )
+				- Schließen Button ( rechts Oben )
+
+
+			- Overview :
+
+				- Liste der importierten Audiodatein
+					- bestehend aus einer Nummerierung, Dateiname, Länge der Datei
+					- Soll Scrollable sein
+					- Drag & Drop für das importieren der Datein soll möglich sein
+
+
+			- Import View :
+				
+				- Ein Bereich für die Möglichkeit eines Drag & Drops zum importieren der Audiodatein
+				- Ein Button zur Verzeichnis Übersicht des Gerätes um Datein auszuwählen und importieren
+				
+
+			- Settings View :
+
+				- Übersicht der verschiedensten Einstellungen
+					- Möglichkeit das Genre der zu verarbeitenden Genres zu ersetzen
+					- Zielverzeichnis auswahl mittels eines Buttons
+					- Möglichkeit innerhalb des Zielverzeichnisses ein/mehrere Unterverzeichnis/e zu erstellen 
+								um die Datein nach Genre zu sortieren 
+								( Der Name des Unterverzeichnis ist die Genre Bezeichnung )
+					- Möglichkeit den "Highlights" einen "Fade In" Effekt zu verleihen
+						- Möglichkeit die "Fade In" Länge mittels eines Eingabefeldes zu bestimmen
+						- "Fade Ins" erhalten ein Unterverzeichnis mit der Betitelung "Fade In"
+					- Möglichkeit den "Highlights" einen "Fade Out" Effekt zu verleihen
+						- Möglichkeit die "Fade Out" Länge mittels eines Eingabefeldes zu bestimmen
+						- "Fade Outs" erhalten ein Unterverzeichnis mit der Betitelung "Fade Out"
+					- Beide "Fades" können zeitgleich angewendet werden 
+						- Simultane "Fades" erhalten ein Unterverzeichnis mit der Betitelung "Fade In & Fade Out"
+					- Möglichkeit das Gerät nach abgeschlossener konvertierung herunter zu fahren
+
+			
+			- Help & About View:
+
+				- Bedienungsanleitung der Anwendung
+				- Lizenzbestimmungen/vereinbarungen/informationen
+			
+			- Eine beliebige Anzahl an .MP3 bzw. .WAV Datein weiterverarbeiten :
+					
+					- Innerhalb der Overview & Import Ansicht
+					- Via Drag & Drop	
+					- Import Funktion
+					- Andere Dateiformate sollen ignoriert werden
+			
