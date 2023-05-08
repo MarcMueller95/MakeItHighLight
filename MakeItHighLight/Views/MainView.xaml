@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:MakeItHighLight"
         xmlns:views="clr-namespace:MakeItHighLight.Views"
         xmlns:viewModel="clr-namespace:MakeItHighLight.ViewModels" 
-        Title="BeRadio - Cut It" Height="710" Width="1300" MinHeight="620" MinWidth="1030"
+        Title="M.I. HighLight" Height="710" Width="1300" MinHeight="620" MinWidth="1030"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         WindowState="Normal" 
