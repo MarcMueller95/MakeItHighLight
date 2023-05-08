@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MakeItHighLight.Communicater
+namespace MakeItHighLight.Communicator
 {
     internal class Communicater
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeItHighLight.Communicator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace MakeItHighLight.ViewModels
 {
     internal class OverviewViewModel
     {
+        private readonly Communicater _communicator;
+
+        public OverviewViewModel(Communicater communicater)
+        {
+            _communicator = communicater;
+        }
     }
 }
