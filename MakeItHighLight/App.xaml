@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:MakeItHighLight"
              Startup="ApplicationStart">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/UIColors.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary> 
+        
+        
+        
+        
     </Application.Resources>
 </Application>
