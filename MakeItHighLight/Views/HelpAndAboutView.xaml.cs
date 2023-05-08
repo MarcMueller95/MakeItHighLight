@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MakeItHighLight.ViewModels
+namespace MakeItHighLight.Views
 {
     /// <summary>
     /// Interaktionslogik für HelpAndAboutView.xaml

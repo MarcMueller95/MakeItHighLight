@@ -18,9 +18,9 @@ namespace MakeItHighLight.Views
     /// <summary>
     /// Interaktionslogik für Overview.xaml
     /// </summary>
-    public partial class Overview : UserControl
+    public partial class OverviewView : UserControl
     {
-        public Overview()
+        public OverviewView()
         {
             InitializeComponent();
         }

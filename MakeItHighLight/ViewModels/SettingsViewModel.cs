@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MakeItHighLight.ViewModels
 {
-    internal class SettingsViewModel
+    internal class SettingsViewModel : ViewModelBase
     {
         private readonly Communicater _communicator;
 

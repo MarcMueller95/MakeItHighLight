@@ -10,6 +10,7 @@
     <Color x:Key="winBorderColor1">#6D2FFF</Color>
     <Color x:Key="winBorderColor2">#FB539B</Color>
     <Color x:Key="winBorderColor3">#836EFB</Color>
+   
     
     
     
@@ -45,9 +46,9 @@
 
 
     <!--Custom Colors-->
-    
-    
-    
+
+    <Color x:Key="Color2">#784DFD</Color>
+
     <!--Dark Theme Colors-->
     <Color x:Key="dark1000">#24292e</Color>
     <Color x:Key="dark900">#383F45</Color>
@@ -94,7 +95,7 @@
 
     <!--Light Red-->
     <SolidColorBrush x:Key="redlight600" Color="#ff7f7f"/>
-    <SolidColorBrush x:Key="drelightk700" Color="#ff6666"/>
+    <SolidColorBrush x:Key="redlightk700" Color="#ff6666"/>
     <SolidColorBrush x:Key="redlight800" Color="#ff4c4c"/>
     <SolidColorBrush x:Key="redlight900" Color="#ff3232"/>
 

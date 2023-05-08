@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MakeItHighLight.ViewModels
 {
    
-    internal class HelpAndAboutViewModel
+    internal class HelpAndAboutViewModel : ViewModelBase
     {
         private readonly Communicater _communicator;
 
