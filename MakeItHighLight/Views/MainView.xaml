@@ -20,7 +20,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
-        ResizeBorderThickness="5"  
+        ResizeBorderThickness="7"  
         />
     </WindowChrome.WindowChrome>
     <Window.Resources>
@@ -49,7 +49,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -60,7 +60,7 @@
 
 
 
-                <Border Background="{StaticResource darktext1000}" CornerRadius="0,0,0,0" Grid.Column="0" BorderThickness="0">
+                <Border Background="{StaticResource darktext1200}" CornerRadius="0,0,0,0" Grid.Column="0" BorderThickness="0">
 
 
 
@@ -138,7 +138,7 @@
                 </Border>
 
 
-                <Border Background="{StaticResource darktext900}" CornerRadius="0,0,0,0" Grid.Column="1" Grid.Row="0">
+                <Border Background="{StaticResource darktext1100}" CornerRadius="0,0,0,0" Grid.Column="1" Grid.Row="0">
 
                     <Grid>
                         <Grid.RowDefinitions>
@@ -265,7 +265,7 @@
 
 
 
-            <Border Background="{StaticResource darktext1000}" CornerRadius="0,0,0,0" Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,0">
+            <Border Background="{StaticResource darktext1200}" CornerRadius="0,0,0,0" Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,0">
 
 
                 <Border.BorderBrush>

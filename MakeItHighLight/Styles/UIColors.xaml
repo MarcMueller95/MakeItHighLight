@@ -50,6 +50,7 @@
     <Color x:Key="Color2">#784DFD</Color>
 
     <!--Dark Theme Colors-->
+    <Color x:Key="dark1200">#121212</Color>
     <Color x:Key="dark1000">#24292e</Color>
     <Color x:Key="dark900">#383F45</Color>
     <Color x:Key="dark800">#454c52</Color>
@@ -73,6 +74,7 @@
     <SolidColorBrush x:Key="darktext800" Color="#454c52"/>
     <SolidColorBrush x:Key="darktext1000" Color="#24292e"/>
     <SolidColorBrush x:Key="darktext1100" Color="#1f2428"/>
+    <SolidColorBrush x:Key="darktext1200" Color="#121212"/>
     <SolidColorBrush x:Key="darktext900" Color="#383F45"/>
     <SolidColorBrush x:Key="yellow" Color="#FFCC6B"/>
     <SolidColorBrush x:Key="green" Color="#34e718"/>
