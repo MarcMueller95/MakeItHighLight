@@ -66,12 +66,6 @@
                         
                     </DataGridTextColumn>
 
-
-
-
-
-
-
                     <DataGridTextColumn 
                                         CellStyle="{StaticResource SaturdayCellStyle}" Width="90" 
                                         Binding="{Binding Length}"  Header="Length  ">
