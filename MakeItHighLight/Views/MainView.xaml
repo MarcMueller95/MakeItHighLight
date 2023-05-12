@@ -113,14 +113,7 @@
                             </StackPanel>
                         </RadioButton>
 
-                        <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color5}"
-                                 Command="{Binding ShowErrorViewCommand}">
-                            <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="CircleExclamation" Style="{StaticResource menuButtonIcon}"/>
-                                <TextBlock Text="Errorlist" Style="{StaticResource menuButtonText}"/>
-                            </StackPanel>
-                        </RadioButton>
+                      
 
                         <!--Menu Button 4-->
                         <RadioButton Style="{StaticResource menuButton}"
@@ -194,10 +187,10 @@
                                 <fa:IconImage Icon="{Binding Icon}"
                                       Height="20"
                                       Width="20"
-                                      Foreground="{StaticResource redlightk700}"
+                                      Foreground="{StaticResource color2}"
                                       Margin="35,0,10,0"/>
                                 <TextBlock Text="{Binding Caption}"
-                                   Foreground="{StaticResource redlightk700}"
+                                   Foreground="{StaticResource color2}"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Bottom"
                                    FontSize="22"
