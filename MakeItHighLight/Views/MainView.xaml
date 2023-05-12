@@ -32,7 +32,7 @@
             x:Name="BorderWindow"
             BorderBrush="{StaticResource color2}"
             >
-        
+
 
 
         <!--<Border.BorderBrush>
@@ -113,7 +113,7 @@
                             </StackPanel>
                         </RadioButton>
 
-                      
+
 
                         <!--Menu Button 4-->
                         <RadioButton Style="{StaticResource menuButton}"
@@ -144,7 +144,7 @@
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Background="Transparent"
-                                Margin="0,0,5,0"
+                                Margin="0,0,1,0"
                                 MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
                                 MouseEnter="pnlControlBar_MouseEnter">
                             <Button x:Name="btnClose"
@@ -222,7 +222,7 @@
                                     <views:HelpAndAboutView  DataContext="{DynamicResource HelpViewModel}"/>
 
                                 </DataTemplate>
-                          
+
 
                                 <DataTemplate DataType="{x:Type viewModel:StartupViewModel}">
                                     <views:StartupView />
@@ -252,11 +252,7 @@
 
 
 
-            <!--Navigation Menu-->
-
-
-
-
+            <!--Action Menu-->
 
             <Border Background="{StaticResource darktext1200}" CornerRadius="0,0,0,0" Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,0">
 
@@ -269,7 +265,6 @@
                     </LinearGradientBrush>
                 </Border.BorderBrush>
 
-               
 
 
 
@@ -277,6 +272,31 @@
 
 
 
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
+                        <Button  Grid.Row="13" Grid.Column="1"  Command="" Style="{StaticResource startbutton}" Margin="15,0,15,0" />
+                        <Button  Grid.Row="13" Grid.Column="1"  Command="" Style="{StaticResource stopbutton}" Margin="25,0,15,0" />
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+
+                        <ProgressBar Margin="0,0,0,0" MinWidth="500" Height="15" Background="{StaticResource darktext1100}"
+                                     BorderThickness="0"                                    
+                                     />
+
+
+
+
+
+
+                    </StackPanel>
+                </Grid>
 
             </Border>
 

@@ -107,4 +107,85 @@
 
 
 
+
+    <Style TargetType="Button" x:Key="startbutton">
+        <Setter Property="Background" Value="{StaticResource yellow}"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                         CornerRadius="5"
+                         BorderThickness="0.9"
+                         
+                         BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" Text="Start  " FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext1200}" FontWeight="Medium" Margin="10,0,0,0" />
+                        </StackPanel>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource redlightk700}"/>
+
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style TargetType="Button" x:Key="stopbutton">
+        <Setter Property="Background" Value="{StaticResource redlightk700}"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                         CornerRadius="5"
+                         BorderThickness="0.9"
+                         
+                         BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center" Text="Stop  " FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext1200}" FontWeight="Medium" Margin="10,0,0,0" />
+                        </StackPanel>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource yellow}"/>
+
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+
 </ResourceDictionary>
