@@ -18,8 +18,11 @@
                 Padding="5">
             <!-- Drop-->
             <DataGrid x:Name="OverviewDataGrid" ColumnWidth="*"
-                      Style="{StaticResource DataGridStyle}"
-                      ItemsSource="{Binding Songs}"                                                                   
+              
+                      Style="{DynamicResource DataGridStyle}"
+                      ItemsSource="{Binding Tracks}"    
+                      Drop="Overview_Drop"
+                     
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn 

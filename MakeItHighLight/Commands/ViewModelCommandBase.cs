@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace MakeItHighLight.Commands
 {
-    internal class ViewModelCommandBase : ICommand
+    public class ViewModelCommandBase : ICommand
     {
         private readonly Action<object> _executeAction;
         private readonly Predicate<object> _canExecuteAction;
@@ -31,10 +31,10 @@ namespace MakeItHighLight.Commands
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
-        //public ViewModelCommandBase()
-        //{
+        public ViewModelCommandBase()
+        {
 
-        //}
+        }
         //Methods
         public virtual bool CanExecute(object parameter)
         {

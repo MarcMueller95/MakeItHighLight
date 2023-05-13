@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MakeItHighLight.Communicator
 {
-    internal class Communicater
+    public class Communicater
     {
+
+        public event Action<int> DropTrackCom;
+
+
+
+
+
+        public void TrackDropProcess(int i)
+        {
+            DropTrackCom?.Invoke(i);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeItHighLight.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace MakeItHighLight.Views
         public OverviewView()
         {
             InitializeComponent();
+        }
+        private async void Overview_Drop(object sender, DragEventArgs e)
+        {
+           await ((OverviewViewModel)this.DataContext).ExecuteListDrop(e);
+
+
         }
     }
 }

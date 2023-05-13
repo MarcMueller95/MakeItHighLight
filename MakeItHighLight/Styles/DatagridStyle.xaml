@@ -20,6 +20,8 @@
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
         <Setter Property="ColumnHeaderStyle" Value="{DynamicResource DataGridHeaderStyled}"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        
      
         
     </Style>
