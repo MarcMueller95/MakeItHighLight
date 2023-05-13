@@ -32,7 +32,6 @@ namespace MakeItHighLight.Commands
             int i = (int)parameter;
             _communicater.TrackDropProcess(i);
 
-
         }
 
     }

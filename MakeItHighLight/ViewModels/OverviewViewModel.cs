@@ -27,7 +27,7 @@ namespace MakeItHighLight.ViewModels
         }
 
         public ICommand DropTrackCommand { get; }
-        public ICommand AddTrackCommand { get; }
+      
 
 
 
@@ -63,7 +63,6 @@ namespace MakeItHighLight.ViewModels
                     {
 
                         Track track = await Track.CreateTrackFromPath(item, counter);
-
                         tracks.Add(track);
                         ObservableCollection<Track> temp = new ObservableCollection<Track>(tracks);
                         this.Tracks = temp;
