@@ -293,6 +293,12 @@
                                      BorderThickness="0"                                    
                                      />
 
+                        <Label Margin="15,0,0,0" Content="{Binding ProgressbarValue}" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
+                        <Label Content="/" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
+                        <Label Content="{Binding ProgressbarMax}" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
+                        <Label Content="Track/s done" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
+
+
                     </StackPanel>
                 </Grid>
 

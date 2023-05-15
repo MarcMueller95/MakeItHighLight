@@ -21,9 +21,12 @@ namespace MakeItHighLight.ViewModels
         #region Fields
         private readonly Communicater _communicator;
         private ViewModelBase _currentChildView;
+        private int _progressbarvalue = 0;
+        private int _progressbarmax = 0;
         private string _caption;
         private IconChar _icon;
         private ObservableCollection<Track> _tracks = new ObservableCollection<Track>();
+        private bool _isProgressDone;
         #endregion
         #region Properties
 
@@ -81,6 +84,52 @@ namespace MakeItHighLight.ViewModels
 
             }
         }
+
+
+        public bool IsProgressDone
+        {
+            get
+            {
+
+
+                return _isProgressDone;
+
+            }
+            set
+            {
+                _isProgressDone = value;
+
+                OnPropertyChanged(nameof(IsProgressDone));
+
+
+            }
+        }
+
+
+        public int ProgressbarValue
+        {
+            get { return _progressbarvalue; }
+            set
+            {
+                _progressbarvalue = value;
+                OnPropertyChanged(nameof(ProgressbarValue));
+            }
+        }
+
+        public int ProgressbarMax
+        {
+            get
+            {
+                return _progressbarmax;
+            }
+            set
+            {
+                _progressbarmax = value;
+                OnPropertyChanged(nameof(ProgressbarMax));
+
+            }
+        }
+
         #region Property Commands
         public ICommand ShowOverviewViewCommand { get; }
         public ICommand ShowImportViewCommand { get; }
@@ -127,6 +176,8 @@ namespace MakeItHighLight.ViewModels
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
 
             _communicator.TrackCom += UpdateTrackList;
+            _communicator.DropTrackCom += UpdateProgessMax;
+
         }
 
 
@@ -147,10 +198,13 @@ namespace MakeItHighLight.ViewModels
                 tracks.Add(item);
             }
             Tracks = tracks;
-            //OnPropertyChanged(nameof(Songs));
+       
 
         }
-
+        private void UpdateProgessMax(int i)
+        {
+            ProgressbarMax = i;
+        }
 
         #region ShowChildView
         private void ExecuteShowHelpAndAboutViewCommand(object obj)
