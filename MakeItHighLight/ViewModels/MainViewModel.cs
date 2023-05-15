@@ -69,6 +69,8 @@ namespace MakeItHighLight.ViewModels
             }
         }
         #endregion
+
+     
         public ObservableCollection<Track> Tracks
         {
 
@@ -133,11 +135,12 @@ namespace MakeItHighLight.ViewModels
         #region Property Commands
         public ICommand ShowOverviewViewCommand { get; }
         public ICommand ShowImportViewCommand { get; }
-        public ICommand StartCuttingCommand { get; }
+        public ICommand StartMainFuncCommand { get; }
         public ICommand ViewModelCutCommand { get; }
         public ICommand ShowHelpViewCommand { get; }
         public ICommand ShowSettingsViewCommand { get; }
 
+       
 
 
 
@@ -172,6 +175,7 @@ namespace MakeItHighLight.ViewModels
             ShowImportViewCommand = new ViewModelCommandBase(ExecuteShowImportViewCommand);
             ShowHelpViewCommand = new ViewModelCommandBase(ExecuteShowHelpAndAboutViewCommand);
             ShowSettingsViewCommand = new ViewModelCommandBase(ExecuteShowSettingsViewCommand);
+            StartMainFuncCommand = new MainCutCommand(this);
 
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
 
