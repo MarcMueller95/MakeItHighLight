@@ -7,6 +7,62 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="25"/>
+
+            <RowDefinition AllowDrop="True" />
+        </Grid.RowDefinitions>
+        <Border 
+             Grid.RowSpan="4"
+                Background="{StaticResource darktext900}"
+                CornerRadius="10" 
+                Padding="5">
+
+        </Border>
+
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" 
+                   Grid.Row="0" FontFamily="Monsterrat" FontWeight="Medium" FontSize="18" Text="Import your MP3, WAV Files or Directories " 
+                   Foreground="{StaticResource yellow}" />
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+
+
+
+
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Via Drag &amp; Drop inside the Overview Tab or"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="50,0,0,0"/>
+
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="2" Margin="50,25,50,25" Drop="Import_Drop" AllowDrop="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" >
+
+
+
+            <Border  CornerRadius="10" AllowDrop="True"  BorderThickness="0.9" BorderBrush="{StaticResource yellow}"  >
+
+
+            </Border>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="center" VerticalAlignment="Center">
+                <Label Margin="0,0,0,10" Content="Drop Files or Directories here" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Monsterrat" FontSize="15" FontWeight="Medium" Foreground="{StaticResource yellow}" >
+
+                </Label>
+
+            </StackPanel>
+
+        </Grid>
+
+
     </Grid>
 </UserControl>

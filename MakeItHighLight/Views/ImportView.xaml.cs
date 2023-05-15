@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeItHighLight.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace MakeItHighLight.Views
         public ImportView()
         {
             InitializeComponent();
+        }
+        private void Import_Drop(object sender, DragEventArgs e)
+        {
+            ((ImportViewModel)this.DataContext).ExecuteImportDrop(e);
+
+
         }
     }
 }

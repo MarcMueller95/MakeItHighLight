@@ -1,8 +1,10 @@
 ﻿using FontAwesome.Sharp;
 using MakeItHighLight.Commands;
 using MakeItHighLight.Communicator;
+using MakeItHighLight.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MakeItHighLight.ViewModels
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
 
 
@@ -21,6 +23,7 @@ namespace MakeItHighLight.ViewModels
         private ViewModelBase _currentChildView;
         private string _caption;
         private IconChar _icon;
+        private ObservableCollection<Track> _tracks = new ObservableCollection<Track>();
         #endregion
         #region Properties
 
@@ -63,6 +66,21 @@ namespace MakeItHighLight.ViewModels
             }
         }
         #endregion
+        public ObservableCollection<Track> Tracks
+        {
+
+            get => _tracks;
+            set
+            {
+
+                _tracks = value;
+                OnPropertyChanged();
+                UpdateOverviewCommand.Execute(Tracks);
+
+
+
+            }
+        }
         #region Property Commands
         public ICommand ShowOverviewViewCommand { get; }
         public ICommand ShowImportViewCommand { get; }
@@ -70,6 +88,11 @@ namespace MakeItHighLight.ViewModels
         public ICommand ViewModelCutCommand { get; }
         public ICommand ShowHelpViewCommand { get; }
         public ICommand ShowSettingsViewCommand { get; }
+
+
+
+
+        public ICommand UpdateOverviewCommand { get; }
         #endregion
 
 
@@ -100,6 +123,10 @@ namespace MakeItHighLight.ViewModels
             ShowImportViewCommand = new ViewModelCommandBase(ExecuteShowImportViewCommand);
             ShowHelpViewCommand = new ViewModelCommandBase(ExecuteShowHelpAndAboutViewCommand);
             ShowSettingsViewCommand = new ViewModelCommandBase(ExecuteShowSettingsViewCommand);
+
+            UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
+
+            _communicator.TrackCom += UpdateTrackList;
         }
 
 
@@ -107,7 +134,22 @@ namespace MakeItHighLight.ViewModels
 
         #endregion
         #region Methods
+        private void UpdateTrackList(Track track)
+        {
+            if (track.Id == 1)
+            {
+                Tracks.Clear();
+            }
+            Tracks.Add(track);
+            ObservableCollection<Track> tracks = new ObservableCollection<Track>();
+            foreach (var item in Tracks)
+            {
+                tracks.Add(item);
+            }
+            Tracks = tracks;
+            //OnPropertyChanged(nameof(Songs));
 
+        }
 
 
         #region ShowChildView

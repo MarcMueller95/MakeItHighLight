@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0"
-                Background="{StaticResource darktext800}"
+                Background="{StaticResource darktext900}"
                 CornerRadius="10" 
                 Padding="5">
             <!-- Drop-->

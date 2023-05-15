@@ -24,6 +24,7 @@ namespace MakeItHighLight.ViewModels
         {
             _communicator = communicater;
             DropTrackCommand = new DropTrackCommand(this, communicater);
+            _communicator.TrackListCom += OnMainListGet;
         }
 
         public ICommand DropTrackCommand { get; }
@@ -44,6 +45,19 @@ namespace MakeItHighLight.ViewModels
 
             }
         }
+        private void OnMainListGet(ObservableCollection<Track> tracks)
+        {
+            Tracks.Clear();
+            ObservableCollection<Track> songs = new ObservableCollection<Track>();
+            foreach (var item in tracks)
+            {
+                songs.Add(item);
+            }
+            Tracks = songs;
+            OnPropertyChanged(nameof(Tracks));
+        }
+
+
 
         public async Task ExecuteListDrop(DragEventArgs e)
         {
