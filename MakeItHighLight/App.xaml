@@ -10,6 +10,10 @@
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Styles/DatagridStyle.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="/Styles/ProgressbarStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Styles/ToggleSwitch.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Styles/TextblockSaveStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Styles/TextBoxStyles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Styles/Scrollbar.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary> 
         

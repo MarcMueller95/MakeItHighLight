@@ -27,6 +27,7 @@ namespace MakeItHighLight.ViewModels
         private IconChar _icon;
         private ObservableCollection<Track> _tracks = new ObservableCollection<Track>();
         private bool _isProgressDone;
+        private Settings _settings;
         #endregion
         #region Properties
 
@@ -87,6 +88,14 @@ namespace MakeItHighLight.ViewModels
             }
         }
 
+        public Settings Settings {
+            get => _settings;
+            set
+            {
+                _settings = value;
+                OnPropertyChanged();          
+            }
+        }
 
         public bool IsProgressDone
         {
@@ -176,11 +185,13 @@ namespace MakeItHighLight.ViewModels
             ShowHelpViewCommand = new ViewModelCommandBase(ExecuteShowHelpAndAboutViewCommand);
             ShowSettingsViewCommand = new ViewModelCommandBase(ExecuteShowSettingsViewCommand);
             StartMainFuncCommand = new MainCutCommand(this);
-
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
 
             _communicator.TrackCom += UpdateTrackList;
             _communicator.DropTrackCom += UpdateProgessMax;
+            _communicator.SettingsCom += UpdateSettings;
+
+            this.GetSettings();
 
         }
 
@@ -208,6 +219,18 @@ namespace MakeItHighLight.ViewModels
         private void UpdateProgessMax(int i)
         {
             ProgressbarMax = i;
+        } 
+        private void UpdateSettings(Settings settings)
+        {
+            Settings = settings;
+        }
+
+        public void GetSettings()
+        {
+
+            if (Services.JsonService.ReadJsonFile() != null)
+                Settings = Services.JsonService.ReadJsonFile();
+            else { Settings = new Settings(); }
         }
 
         #region ShowChildView

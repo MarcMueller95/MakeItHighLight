@@ -7,6 +7,243 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="115" MaxHeight="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+
+        </Grid.ColumnDefinitions>
+        <Border 
+             Grid.RowSpan="14"
+            Grid.ColumnSpan="4"
+                Background="{StaticResource darktext800}"
+                CornerRadius="10" 
+                Padding="5">
+
+
+
+        </Border>
+
+
+        <TextBlock Margin="0,50,0,0" Grid.Column="1" Grid.Row="0" Text="Control your Settings " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="18" 
+                   HorizontalAlignment="Left" />
+
+        <ScrollViewer  Grid.Row="1" Grid.ColumnSpan="3" VerticalScrollBarVisibility="auto"  >
+            <Grid Grid.Row="1" Grid.ColumnSpan="3">
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                   
+
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+           
+
+                    
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                  
+
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="15" MaxHeight="15"/>
+                    <RowDefinition MinHeight="35" MaxHeight="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+
+                </Grid.ColumnDefinitions>
+
+
+
+                <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
+                  
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,05">
+                            <GradientStop Color="{StaticResource dark800}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark800}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+                <Border Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,05">
+                            <GradientStop Color="{StaticResource dark800}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark800}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+                <Border Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2"  BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,05">
+                            <GradientStop Color="{StaticResource dark800}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark800}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+
+
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="0" Text="Create Genre Directories :" 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <CheckBox  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="0" 
+                               IsChecked="{Binding Genres}"
+                  Style="{StaticResource ToggleSwitch}">
+
+
+                </CheckBox>
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="1" Text="Replace Genre : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
+
+                    <CheckBox  Grid.Column="2" HorizontalAlignment="Left" 
+                               IsChecked="{Binding GenreRepl}"
+                  Style="{StaticResource ToggleSwitch}">
+
+
+                    </CheckBox>
+
+                    <TextBlock Margin="107,0,0,0" Grid.Column="2"  Text="With : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBox Width="120" Margin="8,0,0,0" Grid.Row="2" IsEnabled="{Binding GenreReplTxtEnabled}" Grid.Column="1" Text="{Binding GenreReplStr}" Style="{StaticResource TextBoxSettingBoolToVisible}"/>
+
+
+
+                </StackPanel>
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="8" Text="Destination Folder : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Button  Grid.Row="8" Grid.Column="2" Command="{Binding SettingDestinationFolderPersistentCommand}" Style="{StaticResource Browsebutton}" />
+
+                <TextBlock Margin="50,0,0,0" Grid.Column="1" Grid.Row="9" Text="Selected Path : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="11" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="2" Grid.Row="9" Text="{Binding DestinationFolderPersistent}" 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="11" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+
             
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="11" Text="Shutdown after Completion :" 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <CheckBox Grid.Column="2" HorizontalAlignment="Left" Grid.Row="11" 
+                  Style="{StaticResource ToggleSwitch}"
+                          IsChecked="{Binding Shutdown}"
+                          
+                          >
+
+                </CheckBox>
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="4" Text="Fade In :" 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+
+
+                <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="2">
+
+                    <CheckBox Grid.Column="2" HorizontalAlignment="Left" Grid.Row="9" 
+                  Style="{StaticResource ToggleSwitch}"
+                              IsChecked="{Binding FadeIn}"
+                              
+                          >
+
+                    </CheckBox>
+                    <TextBlock Margin="110,0,0,0" Grid.Column="1"  Text="Seconds : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBox Margin="15,0,0,0" IsEnabled="{Binding FadeInTxtEnabled}" Width="60" Grid.Row="4" Grid.Column="1" Style="{StaticResource TextBoxSettingBoolToVisible}" Text="{Binding FadeInSecondsIn}"/>
+
+                </StackPanel>
+
+
+
+                <TextBlock Margin="0,0,0,0" Grid.Column="1" Grid.Row="5" Text="Fade Out :" 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+                <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="2">
+                    <CheckBox Grid.Column="2" HorizontalAlignment="Left" Grid.Row="9" 
+                  Style="{StaticResource ToggleSwitch}" IsChecked="{Binding FadeOut}"
+                              >
+
+                    </CheckBox>
+                    <TextBlock Margin="110,0,0,0"  Grid.Column="1" Grid.Row="5" Text="Seconds : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBox Margin="15,0,0,0" IsEnabled="{Binding FadeOutTxtEnabled}" Text="{Binding FadeInSecondsOut}" Width="60" Grid.Row="5" Grid.Column="1" Style="{StaticResource TextBoxSettingBoolToVisible}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="14" Grid.Column="1">
+                    <Button  Grid.Row="14" Grid.Column="1" Command="{Binding SettingSaveCommand}" Style="{StaticResource savebutton}" />
+                    <TextBlock Margin="15,0,0,0" Text="Saved" IsEnabled="{Binding SavedText}" FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="14" Style="{StaticResource savetxt }"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                </StackPanel>
+
+
+
+            </Grid>
+
+
+
+
+        </ScrollViewer>
     </Grid>
 </UserControl>

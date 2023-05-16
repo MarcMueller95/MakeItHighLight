@@ -186,6 +186,72 @@
     </Style>
 
 
+<!--Save Button-->
+    <Style TargetType="Button" x:Key="savebutton">
+        <Setter Property="Background" Value="{StaticResource yellow}"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                         CornerRadius="5"
+                         BorderThickness="0.9"
+                         
+                         BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <fa:IconImage  Icon="FloppyDisk" IconFont="Solid" Foreground="{StaticResource darktext800}" Height="15" Width="15"/>
+                            <TextBlock Text="Save" VerticalAlignment="Center" FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext800}" FontWeight="Medium" Margin="10,0,0,0" />
+                        </StackPanel>
 
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource redlightk700}"/>
+
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--Browse Button-->
+    <Style TargetType="Button" x:Key="Browsebutton">
+        <Setter Property="Background" Value="{StaticResource yellow}"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                         CornerRadius="5"
+                         BorderThickness="0.9"
+                         
+                         BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <fa:IconImage  Icon="FolderPlus" Foreground="{StaticResource darktext800}" Height="15" Width="15"/>
+                            <TextBlock Text="Browse" VerticalAlignment="Center" FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext800}" FontWeight="Medium" Margin="10,0,0,0" />
+                        </StackPanel>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource redlightk700}"/>
+
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 </ResourceDictionary>

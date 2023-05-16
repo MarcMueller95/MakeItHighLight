@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeItHighLight.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -25,7 +26,9 @@ namespace MakeItHighLight.Views
         public MainView()
         {
             InitializeComponent();
-        
+
+          
+
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -39,8 +42,10 @@ namespace MakeItHighLight.Views
 
         private void pnlControlBar_MouseEnter(object sender, MouseEventArgs e)
         {
-            this.MaxHeight = (SystemParameters.MaximizedPrimaryScreenHeight);
-            this.MaxWidth = (SystemParameters.MaximizedPrimaryScreenWidth - 9);
+            this.MaxHeight = (SystemParameters.MaximizedPrimaryScreenHeight-1);
+            this.MaxWidth = (SystemParameters.MaximizedPrimaryScreenWidth - 7);
+           
+            
         }
 
 

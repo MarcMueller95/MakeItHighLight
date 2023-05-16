@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style TargetType="TextBox" x:Key="TextBoxSettingBoolToVisible">
+
+        <Setter Property="Foreground" Value="{StaticResource yellow}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="CaretBrush" Value="{StaticResource yellow}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+
+        <Setter Property="Padding" Value="10,0,10,0"/>
+
+        <Setter Property="Template">
+
+
+
+
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border"
+                            CornerRadius="10"
+                            BorderBrush="Transparent"
+                            BorderThickness="2"
+                            Background="{StaticResource darktext700}"
+                                                >
+
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                        Focusable="false"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource redlightk700}"/>
+
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Visibility" Value="hidden"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource yellow}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

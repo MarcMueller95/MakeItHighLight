@@ -13,6 +13,10 @@ namespace MakeItHighLight.Communicator
 
         public event Action<int> DropTrackCom;
         public event Action<Track> TrackCom;
+        public event Action<Settings> SettingsCom;
+
+
+
         public event Action<ObservableCollection<Track>> TrackListCom;
 
         public void TrackDropProcess(int i)
@@ -27,6 +31,11 @@ namespace MakeItHighLight.Communicator
         public void AddTrackListCom(ObservableCollection<Track> track)
         {
             TrackListCom?.Invoke(track);
+        }
+
+        public void GetSettings(Settings settings)
+        {
+            SettingsCom?.Invoke(settings);
         }
 
     }

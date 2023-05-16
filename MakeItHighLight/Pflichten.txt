@@ -72,3 +72,24 @@ in ihren Zielordner kopieren. Dabei sollen diese Songauschnitte möglichst die "
 					- Import Funktion
 					- Andere Dateiformate sollen ignoriert werden
 			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			// Cigdem Fragen wegen 2ten Bildschirm unterschiedliche Auflösung Dynamisch ?
+
+			System.Windows.SystemParameters.WorkArea.Width
+			System.Windows.SystemParameters.WorkArea.Height
