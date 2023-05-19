@@ -330,7 +330,10 @@ namespace MakeItHighLight.ViewModels
         {
             var fbd = new System.Windows.Forms.FolderBrowserDialog();
             fbd.ShowDialog();
+            if(!String.IsNullOrEmpty(fbd.SelectedPath))
             DestinationFolderPersistent = fbd.SelectedPath;
+            else
+                DestinationFolderPersistent = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 
         }
