@@ -28,6 +28,10 @@ namespace MakeItHighLight.ViewModels
         private ObservableCollection<Track> _tracks = new ObservableCollection<Track>();
         private bool _isProgressDone;
         private Settings _settings;
+        private bool _isStartBtnVisible = true;
+        private bool _isStopBtnVisible = false;
+        private bool _isClearBtnVisible = true;
+        private bool _isStopBtnActive = false;
         #endregion
         #region Properties
 
@@ -71,7 +75,105 @@ namespace MakeItHighLight.ViewModels
         }
         #endregion
 
+
+        public bool IsStartBtnVisible
+        {
+            get
+            {
+
+
+
+                return _isStartBtnVisible;
+
+            }
+            set
+            {
+                _isStartBtnVisible = value;
+
+                OnPropertyChanged(nameof(IsStartBtnVisible));
+
+
+            }
+
+        }
+
+        public bool IsStopBtnActive
+        {
+            get
+            {
+
+
+                return _isStopBtnActive;
+
+            }
+            set
+            {
+                _isStopBtnActive = value;
+
+                OnPropertyChanged(nameof(IsStopBtnActive));
+
+
+            }
+        }
+        public bool IsProgressDone
+        {
+            get
+            {
+
+
+                return _isProgressDone;
+
+            }
+            set
+            {
+                _isProgressDone = value;
+
+                OnPropertyChanged(nameof(IsProgressDone));
+
+
+            }
+        }
+        public bool IsStopBtnVisible
+        {
+            get
+            {
+
+                
+
+                return _isStopBtnVisible;
+
+            }
+            set
+            {
+                _isStopBtnVisible = value;
+
+                OnPropertyChanged(nameof(IsStopBtnVisible));
+
+
+            }
+        }
+
+        public bool IsClearBtnVisible
+        {
+            get
+            {
+
      
+
+                return _isClearBtnVisible;
+
+            }
+            set
+            {
+                _isClearBtnVisible = value;
+
+                OnPropertyChanged(nameof(IsClearBtnVisible));
+
+
+            }
+
+        }
+
         public ObservableCollection<Track> Tracks
         {
 
@@ -97,25 +199,7 @@ namespace MakeItHighLight.ViewModels
             }
         }
 
-        public bool IsProgressDone
-        {
-            get
-            {
-
-
-                return _isProgressDone;
-
-            }
-            set
-            {
-                _isProgressDone = value;
-
-                OnPropertyChanged(nameof(IsProgressDone));
-
-
-            }
-        }
-
+    
 
         public int ProgressbarValue
         {
@@ -149,7 +233,7 @@ namespace MakeItHighLight.ViewModels
         public ICommand ShowHelpViewCommand { get; }
         public ICommand ShowSettingsViewCommand { get; }
 
-       
+        public ICommand StopMainFuncCommand { get; }
 
 
 
@@ -184,6 +268,7 @@ namespace MakeItHighLight.ViewModels
             ShowImportViewCommand = new ViewModelCommandBase(ExecuteShowImportViewCommand);
             ShowHelpViewCommand = new ViewModelCommandBase(ExecuteShowHelpAndAboutViewCommand);
             ShowSettingsViewCommand = new ViewModelCommandBase(ExecuteShowSettingsViewCommand);
+            StopMainFuncCommand = new ViewModelCommandBase(ExecuteStopListCommand);
             StartMainFuncCommand = new MainCutCommand(this);
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
 
@@ -232,7 +317,10 @@ namespace MakeItHighLight.ViewModels
                 Settings = Services.JsonService.ReadJsonFile();
             else { Settings = new Settings(); }
         }
-
+        private void ExecuteStopListCommand(object obj)
+        {
+            IsStopBtnActive = true;
+        }
         #region ShowChildView
         private void ExecuteShowHelpAndAboutViewCommand(object obj)
         {
