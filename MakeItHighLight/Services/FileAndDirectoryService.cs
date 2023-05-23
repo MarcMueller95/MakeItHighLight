@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -102,7 +103,24 @@ namespace MakeItHighLight.Services
 
         }
 
+        internal static void CreateDirectories(List<string> directories, string genre, Paths paths)
+        {
+            System.IO.Directory.CreateDirectory(paths.Temppath);
+            System.IO.Directory.CreateDirectory(paths.Temppath2);
+            System.IO.Directory.CreateDirectory(paths.Temppath3);
+            System.IO.Directory.CreateDirectory(paths.Temppath4);
+            foreach (var item in directories)
+            {
+                System.IO.Directory.CreateDirectory(item);
+
+            }
+
+            if (paths.IsGenreDir)
+            {
+                System.IO.Directory.CreateDirectory(directories.Last() + genre + "\\");
+            }
 
 
+        }
     }
 }

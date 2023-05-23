@@ -232,7 +232,6 @@ namespace MakeItHighLight.ViewModels
         public ICommand ViewModelCutCommand { get; }
         public ICommand ShowHelpViewCommand { get; }
         public ICommand ShowSettingsViewCommand { get; }
-
         public ICommand StopMainFuncCommand { get; }
 
 

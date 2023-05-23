@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MakeItHighLight.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -56,6 +57,53 @@ namespace MakeItHighLight.Models
             return Services.PathsService.ReplaceForbiddenChars(final);        
         }
 
+        internal List<string> CreateDirectorieStructureForPath(Settings settings, string kbit)
+        {
+            List<string> directories = new List<string>();
+            if (kbit != "0")
+            {
+                Finalpath += kbit + " Kbit\\";
 
+
+
+
+
+                directories.Add(Finalpath);
+
+                if (settings.FadeIn && settings.FadeOut)
+                {
+                    Finalpath += FileAndDirectoryService.s_FadeInandOutFolder;
+                    directories.Add(Finalpath);
+                }
+                else
+                {
+                    if (settings.FadeIn)
+                    {
+                        Finalpath += FileAndDirectoryService.s_FadeInFolder;
+                        directories.Add(Finalpath);
+                    }
+                    else
+                    {
+                        if (settings.FadeOut)
+                        {
+                            Finalpath += FileAndDirectoryService.s_FadeOutFolder;
+                            directories.Add(Finalpath);
+
+                        }
+                        else
+                        {
+                            Finalpath += FileAndDirectoryService.s_UnfadedFolder;
+                            directories.Add(Finalpath);
+
+                        }
+                    }
+
+
+                }
+            }
+
+            return directories;
+        }
     }
-}
+    }
+
