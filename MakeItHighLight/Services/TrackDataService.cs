@@ -39,7 +39,7 @@ namespace MakeItHighLight.Services
             }
         }
 
-        internal static async Task HighLight(Track item, Paths paths, Settings settings, bool isWav)
+        internal static async Task<long[]> HighLight(Track item, Paths paths, Settings settings, bool isWav)
         {
             WaveStream waveStream;
             long[] firstAndLastSample;
@@ -71,9 +71,10 @@ namespace MakeItHighLight.Services
             await item.Tag.TagsToPath(paths.Temppath2 + paths.Title);
             waveStream.Flush();
             waveStream.Close();
+            return firstAndLastSample;
         }
 
-        private static async Task TrimFile(string outputpath, long[] firstAndLastSample, Track item, string inputpath)
+        public static async Task TrimFile(string outputpath, long[] firstAndLastSample, Track item, string inputpath)
         {
             await using WaveFileReader reader = new WaveFileReader(inputpath);
 
@@ -219,6 +220,7 @@ namespace MakeItHighLight.Services
 
             return firstAndLastSample;
         }
+      
         internal static async void ConvertToMp3(Track item, Paths pathing)
         {
             using (var reader = new AudioFileReader(pathing.Finalpath + pathing.Title))
@@ -261,7 +263,7 @@ namespace MakeItHighLight.Services
                 (long)timedouble,
                 Double.Parse(settings.FadeinSecondsOut)
                 );
-            await item.Tag.TagsToPath(paths.Temppath2 + paths.Title);
+            await item.Tag.TagsToPath(paths.Temppath3 + paths.Title);
 
             PerformFadeOut(
              paths.Temppath3 + paths.Title,

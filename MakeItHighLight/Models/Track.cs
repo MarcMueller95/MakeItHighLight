@@ -136,6 +136,7 @@ namespace MakeItHighLight.Models
             }
             else
                 track.OrigExtensionWav = true;
+            track.Kbit = track.Tag.Bitrate.ToString();
 
             return track;
         }

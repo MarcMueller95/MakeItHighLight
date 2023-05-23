@@ -60,51 +60,84 @@ namespace MakeItHighLight.Commands
 
         private async Task<Paths> DoHighlightAndFades(Track item, Settings settings)
         {
+            long[] firstAndLastSample;
             Paths paths = new Paths(item, settings);
             if (settings.Genres)
-            
+
                 paths.IsGenreDir = true;
-                List<string> directories = paths.CreateDirectorieStructureForPath(settings, item.Kbit);
-                Services.FileAndDirectoryService.CreateDirectories(directories, paths.Genre, paths);
-                if (settings.FadeIn && settings.FadeOut)
+            List<string> directories = paths.CreateDirectorieStructureForPath(settings, item.Kbit);
+            Services.FileAndDirectoryService.CreateDirectories(directories, paths.Genre, paths);
+
+
+            // Both
+            if (settings.FadeIn && settings.FadeOut)
+            {
+                if (item.OrigExtensionWav)
                 {
-                    if (item.OrigExtensionWav)
-                        await Services.TrackDataService.HighLight(item, paths, settings, true);
-                    else
-                        await Services.TrackDataService.HighLight(item, paths, settings, false);
-
-                   await Services.TrackDataService.FadeInAndOut(paths.Temppath2 + paths.Title, paths, item, settings);
-                
-
+                    firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
                 }
+
                 else
                 {
-                    if (settings.FadeOut && settings.FadeIn == false)
-                    {
-                        if (item.OrigExtensionWav)
-                            await Services.TrackDataService.HighLight(item, paths, settings, true);
-                        else
-                            await Services.TrackDataService.HighLight(item, paths, settings, false);
-                        Services.TrackDataService.FadeOut(paths.Temppath2 + paths.Title, paths, item, settings);
-                    }
-                    else if (settings.FadeIn && settings.FadeOut == false)
-                    {
-                        if (item.OrigExtensionWav)
-                            await Services.TrackDataService.HighLight(item, paths, settings, true);
-                        else
-                            await Services.TrackDataService.HighLight(item, paths, settings, false);
-                        Services.TrackDataService.FadeIn(paths.Temppath2 + paths.Title, paths, item, settings);
-                    }
-                    else
-                        if (item.OrigExtensionWav)
-                        await Services.TrackDataService.HighLight(item, paths, settings, true);
-                    else
-                        await Services.TrackDataService.HighLight(item, paths, settings, false);
+                    firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
+
                 }
-                Services.TrackDataService.ConvertToMp3(item, paths);
-                await item.Tag.TagsToPath(paths.Finalpath);
-                return paths;
-            
+
+                await Services.TrackDataService.FadeInAndOut(paths.Temppath2 + paths.Title, paths, item, settings);
+
+
+            }
+            else
+            {
+
+                // FadeOut
+                if (settings.FadeOut && settings.FadeIn == false)
+                {
+                    if (item.OrigExtensionWav)
+                    {
+                        firstAndLastSample =  await Services.TrackDataService.HighLight(item, paths, settings, true);
+                    }
+
+                    else
+                    {
+                        firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
+                       //await Services.TrackDataService.TrimFile()
+                    }
+
+                    Services.TrackDataService.FadeOut(paths.Temppath2 + paths.Title, paths, item, settings);
+                }
+                // FadeIn
+                else if (settings.FadeIn && settings.FadeOut == false)
+                {
+                    if (item.OrigExtensionWav)
+                    {
+                        firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
+                    }
+
+                    else
+                    {
+                        firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
+                    }
+
+                    Services.TrackDataService.FadeIn(paths.Temppath2 + paths.Title, paths, item, settings);
+                }
+                // unfaded
+                else
+                    if (item.OrigExtensionWav)
+                {
+                    firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
+                }
+
+                else
+                {
+                    firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
+                }
+
+            }
+            Services.TrackDataService.ConvertToMp3(item, paths);
+            await item.Tag.TagsToPath(paths.Finalpath);
+            return paths;
+
         }
 
         private void Prepare()
