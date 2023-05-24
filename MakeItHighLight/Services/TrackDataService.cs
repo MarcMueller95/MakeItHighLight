@@ -5,6 +5,7 @@ using NAudio.Wave.SampleProviders;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TagLib.Riff;
 
 namespace MakeItHighLight.Services
 {
@@ -66,7 +67,7 @@ namespace MakeItHighLight.Services
             waveStream.Flush();
             waveStream.Close();
             waveStream = new WaveFileReader(paths.Temppath + paths.Title);
-            firstAndLastSample = TrackDataService.DefineFirstandLastSample(item, settings, (WaveFileReader)waveStream);
+            firstAndLastSample = TrackDataService.DefineFirstandLastSample(item, settings, (WaveFileReader)waveStream, paths.Temppath + paths.Title);
             await TrackDataService.TrimFile(paths.Temppath4 + paths.Title, firstAndLastSample, item, paths.Temppath + paths.Title);
             await item.Tag.TagsToPath(paths.Temppath4 + paths.Title);
             waveStream.Flush();
@@ -111,7 +112,7 @@ namespace MakeItHighLight.Services
             }
         }
 
-        internal static long[] DefineFirstandLastSample(Track item, Settings settings, WaveFileReader reader)
+        internal static long[] DefineFirstandLastSample(Track item, Settings settings, WaveFileReader reader, string inputpath)
         {
             long[] firstAndLastSample = new long[2];
 
@@ -119,7 +120,7 @@ namespace MakeItHighLight.Services
             var test2 = false;
             double[] loudestsample = new double[2] { -100, -100 };
             double[] quietsample = new double[2];
-            long loudestposition;
+            long loudestposition = 0;
             long quietposition = 0;
             bool firstrun = true;
             TimeSpan loudestTime = new TimeSpan();
@@ -133,14 +134,14 @@ namespace MakeItHighLight.Services
             {
                 var test = reader.ReadNextSampleFrame();
 
-                if (
-                        loudestsample[0] < Math.Log10(Math.Abs(test[0]))
-                        &&
-                        loudestsample[1] < Math.Log10(Math.Abs(test[1]))
-                    )
-                {
 
-                    if (reader.CurrentTime.TotalSeconds - 20 > 0 && reader.CurrentTime.TotalSeconds + 15 < reader.TotalTime.TotalSeconds)
+                if ((reader.CurrentTime.TotalSeconds - 20 > 0) && (reader.CurrentTime.TotalSeconds + 15 < reader.TotalTime.TotalSeconds))
+                {
+                    if (
+                 loudestsample[0] < Math.Log10(Math.Abs(test[0]))
+                 &&
+                 loudestsample[1] < Math.Log10(Math.Abs(test[1]))
+                         )
                     {
                         loudestsample[0] = Math.Log10(Math.Abs(test[0]));
                         loudestsample[1] = Math.Log10(Math.Abs(test[1]));
@@ -150,8 +151,12 @@ namespace MakeItHighLight.Services
 
                 }
             }
+
+            reader.Flush();
+            reader.Close();
+            reader = new WaveFileReader(inputpath);
             //Errechnet niedrigsten Wert voreingehend innerhalb einer 10 sek Spanne 
-            reader.Position = 0;
+
             for (int i = 0; i < samples; i++)
             {
                 var test = reader.ReadNextSampleFrame();
@@ -180,47 +185,25 @@ namespace MakeItHighLight.Services
 
 
                 }
-                
-
-
-                if (Math.Round(loudestTime.TotalSeconds, 3) +10 == Math.Round(reader.CurrentTime.TotalSeconds, 3))
-                {
-
-                
-                    firstAndLastSample[1] = reader.Position;
-
-                }
 
             }
 
-            reader.Position = 0;
-            for (int i = 0; i < samples; i++)
-            {
-                var test = reader.ReadNextSampleFrame();
-              
-                
+       
 
 
-                if (Math.Round(quietTime.TotalSeconds, 3) -10 == Math.Round(reader.CurrentTime.TotalSeconds, 3))
-                {
-
-                
-                    firstAndLastSample[0] = reader.Position;
-
-                }
-
-            }
+            firstAndLastSample[0] = quietposition - (reader.WaveFormat.AverageBytesPerSecond * 5);
 
 
 
+            firstAndLastSample[1] = loudestposition + (reader.WaveFormat.AverageBytesPerSecond * 5);
 
 
-
-
+            reader.Flush();
+            reader.Close();
 
             return firstAndLastSample;
         }
-      
+
         internal static async void ConvertToMp3(Track item, Paths pathing)
         {
             using (var reader = new AudioFileReader(pathing.Finalpath + pathing.Title))
@@ -357,7 +340,7 @@ namespace MakeItHighLight.Services
         {
             WaveFileReader reader;
             reader = new WaveFileReader(inputpath);
-            WaveFileWriter.CreateWaveFile(paths.Finalpath + paths.Title,reader);
+            WaveFileWriter.CreateWaveFile(paths.Finalpath + paths.Title, reader);
             await item.Tag.TagsToPath(paths.Finalpath + paths.Title);
             reader.Flush();
             reader.Close();
