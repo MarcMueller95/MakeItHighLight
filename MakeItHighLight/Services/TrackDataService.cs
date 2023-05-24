@@ -67,8 +67,8 @@ namespace MakeItHighLight.Services
             waveStream.Close();
             waveStream = new WaveFileReader(paths.Temppath + paths.Title);
             firstAndLastSample = TrackDataService.DefineFirstandLastSample(item, settings, (WaveFileReader)waveStream);
-            await TrackDataService.TrimFile(paths.Temppath2 + paths.Title, firstAndLastSample, item, paths.Temppath + paths.Title);
-            await item.Tag.TagsToPath(paths.Temppath2 + paths.Title);
+            await TrackDataService.TrimFile(paths.Temppath4 + paths.Title, firstAndLastSample, item, paths.Temppath + paths.Title);
+            await item.Tag.TagsToPath(paths.Temppath4 + paths.Title);
             waveStream.Flush();
             waveStream.Close();
             return firstAndLastSample;
@@ -350,6 +350,18 @@ namespace MakeItHighLight.Services
                 Double.Parse(settings.FadeinSecondsOut)
                 );
             await item.Tag.TagsToPath(pathing.Finalpath + pathing.Title);
+
+        }
+
+        internal static async Task CopyFile(string inputpath, Paths paths, Track item)
+        {
+            WaveFileReader reader;
+            reader = new WaveFileReader(inputpath);
+            WaveFileWriter.CreateWaveFile(paths.Finalpath + paths.Title,reader);
+            await item.Tag.TagsToPath(paths.Finalpath + paths.Title);
+            reader.Flush();
+            reader.Close();
+
 
         }
     }
