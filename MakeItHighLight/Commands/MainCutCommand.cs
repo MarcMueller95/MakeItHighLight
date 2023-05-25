@@ -52,7 +52,10 @@ namespace MakeItHighLight.Commands
             {
                 if (!Mainviewmodel.IsStopBtnActive)
                 {
-                    paths = await DoHighlightAndFades(item, Mainviewmodel.Settings);
+                    await Task.Run(async () =>
+                    {
+                        paths = await DoHighlightAndFades(item, Mainviewmodel.Settings);
+                    });
                     counter++;
                     ProgressbarUpdate(counter);
                 }
@@ -62,6 +65,13 @@ namespace MakeItHighLight.Commands
 
         private async Task<Paths> DoHighlightAndFades(Track item, Settings settings)
         {
+
+
+
+
+
+
+
             long[] firstAndLastSample = new long[2];
             Paths paths = new Paths(item, settings);
             if (settings.Genres)

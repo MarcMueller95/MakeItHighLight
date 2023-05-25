@@ -282,7 +282,7 @@
                     <!--Action Buttons-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
                         <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsStartBtnVisible}" Command="{Binding StartMainFuncCommand}" Style="{StaticResource startbutton}" Margin="15,0,15,0" />
-                        <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsStopBtnVisible}"  Command="{Binding StopListCommand}" Style="{StaticResource stopbutton}" Margin="25,0,15,0" />
+                        <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsStopBtnVisible}"  Command="{Binding StopMainFuncCommand}" Style="{StaticResource stopbutton}" Margin="25,0,15,0" />
                         <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsClearBtnVisible}" Command="{Binding ClearListCommand}" Style="{StaticResource clearbutton}" />
 
 
