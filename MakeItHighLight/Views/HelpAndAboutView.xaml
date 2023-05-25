@@ -7,6 +7,427 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+
+        </Grid.ColumnDefinitions>
+        <Border 
+             Grid.RowSpan="14"
+            Grid.ColumnSpan="4"
+                Background="{StaticResource darktext1000}"
+                CornerRadius="10" 
+                Padding="5">
+
+
+
+        </Border>
+
+
+
+        <ScrollViewer  Grid.RowSpan="1" Grid.ColumnSpan="3" VerticalScrollBarVisibility="auto"  >
+            <Grid Grid.Row="1" Grid.ColumnSpan="3">
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="10"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="10"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="10"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="10"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="10"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                   
+                 
+                   
+
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="250" MaxWidth="250" Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+
+                <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="0"  BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="0"  BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+               
+                <Border Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+                <Border Grid.Row="32" Grid.Column="0"  BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+                <Border Grid.Row="36" Grid.Column="0"  BorderThickness="0,0,0,1">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
+                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+
+                <TextBlock Margin="0,50,0,0" Grid.ColumnSpan="2" Grid.Row="0" Text="How to use this Application : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="22" 
+                   HorizontalAlignment="Center" />
+
+                <TextBlock Grid.Row="3"  Text="In General :"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="0,0,0,0"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="- Supported Audio Formats : MP3 and WAV Files"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+
+                <TextBlock Grid.Row="6" Grid.Column="1" Text="- Drag &amp; Drop inside the &quot;Overview&quot; Tab or inside the &quot;Import&quot; Tab File/s or Directories"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="- Default Output Path will be \User\Documents\(Songkbit)\Unfaded\(Titel)"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="- Transformed Filename will be: (Artist/s) + (Titel) + (Year) + (Genre) + (Kbit).mp3"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+
+                <TextBlock Grid.Row="10" Text="In &quot;Settings&quot; Tab :"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="75,0,0,0"/>
+
+
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="- Check your Settings in the &quot;Settings&quot; Tab and Save them!"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+           
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="- &quot;Replace Genre&quot; changes the Genre inside the Output Filename and also the Genre Directory ( If selected )"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+                <TextBlock Grid.Row="14"  Grid.Column="1" Text=" and replaces it with the &quot;With&quot; Text "
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="100,0,0,0"/>
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="- &quot;Create Genre Directories&quot; will create a Directory with the Name of each Genre inside"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+                <TextBlock Grid.Row="17" Grid.Column="1" Text="(Unfade / FadeIn / FadeOut / FadeInandOut )"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="100,0,0,0"/>
+                <TextBlock Grid.Row="19" Grid.Column="1" Text="- &quot;Shutdown after Completion&quot; will Shutdown your PC after its done procesing all Track/s"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+                <TextBlock Grid.Row="20" Grid.Column="1" Text="- &quot;Fade In&quot; will create a procentual Fade on the Start of the Track"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+
+
+
+                <TextBlock Grid.Row="21" Grid.Column="1" Text="and changes the output Directory to &quot;FadeIn&quot;"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="100,0,0,0"/>
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="- &quot;In Seconds&quot; determines how long this fade will be"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+
+
+                <TextBlock Grid.Row="24" Grid.Column="1" Text="- &quot;Fade Out&quot; will create a procentual Fade on the End of the Track"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+
+
+
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="and changes the output Directory to &quot;FadeOut&quot;"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="100,0,0,0"/>
+
+
+                <TextBlock Grid.Row="27" Grid.Column="1" Text="-&quot;Fade In&quot; and &quot;Fade Out&quot; both selected will perform both Fades"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+                <TextBlock Grid.Row="28" Grid.Column="1" Text="and changes the output Directory to &quot;FadeInandOut&quot;"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="100,0,0,0"/>
+               
+
+                <TextBlock Margin="0,50,0,0" Grid.ColumnSpan="2" Grid.Row="29" Text="About : " 
+                   FontWeight="Medium" Foreground="{StaticResource yellow}" 
+                   FontFamily="Monsterrat" FontSize="22" 
+                   HorizontalAlignment="Center" />
+
+
+                <TextBlock Grid.Row="32" Text="Contributors :"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="75,0,0,0"/>
+
+
+
+                <TextBlock Grid.Row="34" Grid.Column="1" Text="Marc Müller, Developer,Idea &amp; Conception"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+           
+
+                <TextBlock Grid.Row="36" Text="Used Libarys :"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="18"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="75,0,0,0"/>
+
+
+                <TextBlock Grid.Row="38" Grid.Column="1" Text="- License Information to be found in the Applications &quot;Read Me&quot; File"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+                <TextBlock Grid.Row="39" Grid.Column="1" Text="- NAudio by Mark Heath &amp; Contributors    MIT License"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+                <TextBlock Grid.Row="40" Grid.Column="1" Text="- NAudio.Lame by Corey Murtagh &amp; Contributors    MIT License"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+                <TextBlock Grid.Row="41" Grid.Column="1" Text="- FontAwesome.Sharp by Awesome Incremented &amp; Contributors  Apache License 2.0"
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+              
+
+                <TextBlock Grid.Row="42" Grid.Column="1" Text="- TagLibSharp by Brian Nickel, Gabriel Burt, Stephen Shaw, etc.  LGPL-2.1-only "
+                                   Foreground="{StaticResource yellow}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                   FontSize="12"
+                                   FontFamily="Monsterrat"
+                                   FontWeight="Medium"
+                       Margin="25,0,0,0"/>
+
+            </Grid>
+
+
+
+
+        </ScrollViewer>
     </Grid>
 </UserControl>
