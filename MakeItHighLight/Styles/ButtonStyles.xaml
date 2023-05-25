@@ -201,7 +201,7 @@
                          
                          BorderBrush="Transparent">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock VerticalAlignment="Center" Text="Clear  " FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext800}" FontWeight="Medium" Margin="10,0,0,0" />
+                            <TextBlock VerticalAlignment="Center" Text="Clear  " FontSize="15" FontFamily="Monsterrat" Foreground="{StaticResource darktext1200}" FontWeight="Medium" Margin="10,0,0,0" />
                         </StackPanel>
 
 
