@@ -26,7 +26,7 @@
             <!--MouseOver Button -->
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="Margin" Value="0,0,0,5"/>
-                <Setter Property="Background" Value="{StaticResource darktext800}"/>
+                <Setter Property="Background" Value="{StaticResource darktext1100}"/>
                 <Setter Property="Foreground" Value="{StaticResource yellow}"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
             </Trigger>
@@ -34,7 +34,7 @@
             <!--Active Button -->
             <Trigger Property="IsChecked" Value="true">
                 <Setter Property="Margin" Value="0,0,0,5"/>
-                <Setter Property="Background" Value="{StaticResource darktext900}"/>
+                <Setter Property="Background" Value="{StaticResource darktext1100}"/>
                 <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
             </Trigger>

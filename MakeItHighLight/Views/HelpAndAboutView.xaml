@@ -24,7 +24,7 @@
         <Border 
              Grid.RowSpan="14"
             Grid.ColumnSpan="4"
-                Background="{StaticResource darktext1000}"
+                Background="{StaticResource darktext900}"
                 CornerRadius="10" 
                 Padding="5">
 
@@ -101,9 +101,9 @@
                 <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>
@@ -111,18 +111,18 @@
                 <Border Grid.Row="3" Grid.Column="0"  BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>
                 <Border Grid.Row="10" Grid.Column="0"  BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>
@@ -130,18 +130,18 @@
                 <Border Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>
                 <Border Grid.Row="32" Grid.Column="0"  BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>
@@ -149,9 +149,9 @@
                 <Border Grid.Row="36" Grid.Column="0"  BorderThickness="0,0,0,1">
                     <Border.BorderBrush>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="0"/>
                             <GradientStop Color="{StaticResource yellowc}" Offset="0.5"/>
-                            <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
+                            <GradientStop Color="{StaticResource dark900}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                 </Border>

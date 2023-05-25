@@ -24,7 +24,7 @@
         <Border 
              Grid.RowSpan="14"
             Grid.ColumnSpan="4"
-                Background="{StaticResource darktext800}"
+                Background="{StaticResource darktext900}"
                 CornerRadius="10" 
                 Padding="5">
 
