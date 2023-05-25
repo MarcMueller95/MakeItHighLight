@@ -233,6 +233,8 @@ namespace MakeItHighLight.ViewModels
         public ICommand ShowHelpViewCommand { get; }
         public ICommand ShowSettingsViewCommand { get; }
         public ICommand StopMainFuncCommand { get; }
+        public ICommand ClearListCommand { get; }
+        
 
 
 
@@ -269,6 +271,7 @@ namespace MakeItHighLight.ViewModels
             ShowSettingsViewCommand = new ViewModelCommandBase(ExecuteShowSettingsViewCommand);
             StopMainFuncCommand = new ViewModelCommandBase(ExecuteStopListCommand);
             StartMainFuncCommand = new MainCutCommand(this);
+            ClearListCommand = new ClearListCommand(this, communicator);
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
 
             _communicator.TrackCom += UpdateTrackList;

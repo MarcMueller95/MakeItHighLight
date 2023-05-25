@@ -14,6 +14,7 @@ namespace MakeItHighLight.Communicator
         public event Action<int> DropTrackCom;
         public event Action<Track> TrackCom;
         public event Action<Settings> SettingsCom;
+        public event Action<bool> ClearActiveCom;
 
 
 
@@ -36,6 +37,10 @@ namespace MakeItHighLight.Communicator
         public void GetSettings(Settings settings)
         {
             SettingsCom?.Invoke(settings);
+        }
+        public void SetClearBtn()
+        {
+            ClearActiveCom?.Invoke(true);
         }
 
     }

@@ -4,6 +4,7 @@ using MakeItHighLight.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +26,18 @@ namespace MakeItHighLight.ViewModels
             _communicator = communicater;
             DropTrackCommand = new DropTrackCommand(this, communicater);
             _communicator.TrackListCom += OnMainListGet;
+            _communicator.ClearActiveCom += OnClearActivated;
         }
 
         public ICommand DropTrackCommand { get; }
-      
 
 
 
+        private void OnClearActivated(bool b)
+        {
+            Tracks.Clear();
+            OnPropertyChanged(nameof(Tracks));
+        }
 
         public ObservableCollection<Track> Tracks
         {
