@@ -39,7 +39,9 @@ namespace MakeItHighLight.Commands
 
         private void End()
         {
+            ProgressbarDone(true);
             ButtonhandlingFinnished();
+            Mainviewmodel.IsStopBtnActive = false;
         }
 
         private async Task Main()
@@ -146,7 +148,7 @@ namespace MakeItHighLight.Commands
         {
 
             ButtonhandlingStart();
-            ProgressbarPreparation(Mainviewmodel.Tracks.Count);
+            ProgressbarPreparation(Mainviewmodel.OverviewViewModel.Tracks.Count);
 
         }
 
@@ -163,6 +165,10 @@ namespace MakeItHighLight.Commands
             Mainviewmodel.IsStartBtnVisible = true;
             Mainviewmodel.IsStopBtnVisible = false;
             Mainviewmodel.IsClearBtnVisible = true;
+        }
+        private void ProgressbarDone(bool b)
+        {
+            _mainviewmodel.IsProgressDone = b;
         }
 
         private void ButtonhandlingStart()
