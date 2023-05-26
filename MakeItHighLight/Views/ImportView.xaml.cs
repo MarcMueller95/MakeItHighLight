@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace MakeItHighLight.Views
 {
-    /// <summary>
-    /// Interaktionslogik für Import.xaml
-    /// </summary>
     public partial class ImportView : UserControl
     {
         public ImportView()
@@ -28,8 +25,6 @@ namespace MakeItHighLight.Views
         private void Import_Drop(object sender, DragEventArgs e)
         {
             ((ImportViewModel)this.DataContext).ExecuteImportDrop(e);
-
-
         }
     }
 }

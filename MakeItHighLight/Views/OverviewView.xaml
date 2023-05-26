@@ -8,10 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-
             <RowDefinition/>
         </Grid.RowDefinitions>
-
         <Border Grid.Row="0"
                 Background="{StaticResource darktext900}"
                 CornerRadius="10" 
@@ -21,8 +19,7 @@
               
                       Style="{DynamicResource DataGridStyle}"
                       ItemsSource="{Binding Tracks}"    
-                      Drop="Overview_Drop"
-                     
+                      Drop="Overview_Drop"                    
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn 
@@ -35,7 +32,6 @@
                                         CanUserSort="False"
                                         CanUserReorder="False"
                                         >
-                        
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Height" Value="25"/>
@@ -44,17 +40,11 @@
                                 <Setter Property="FontSize" Value="15"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
-                        
-                        
                     </DataGridTextColumn>
-                    
-                    
                     <DataGridTextColumn 
                                         CellStyle="{StaticResource SaturdayCellStyle}" Width="*" 
                                         Binding="{Binding Title}"  Header="Filename" 
                                         CanUserSort="False" CanUserReorder="False"  CanUserResize="True">
-                       
-                        
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Padding" Value="0,7,0,7"/>
@@ -62,18 +52,12 @@
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="Height" Value="36"/>
                                 <Setter Property="FontSize" Value="15"/>
-
                             </Style>
                         </DataGridTextColumn.ElementStyle>
-                        
-                        
                     </DataGridTextColumn>
-
                     <DataGridTextColumn 
                                         CellStyle="{StaticResource SaturdayCellStyle}" Width="90" 
                                         Binding="{Binding Length}"  Header="Length  ">
-                        
-                        
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Padding" Value="0,3,0,3"/>
@@ -83,29 +67,15 @@
                                 <Setter Property="VerticalAlignment" Value="Center" />
                             </Style>
                         </DataGridTextColumn.ElementStyle>
-                        
-                        
                     </DataGridTextColumn>
-
-
                 </DataGrid.Columns>
-                
-                
                 <DataGrid.RowStyle>
-
-                    
                     <Style TargetType="DataGridRow">
                         <Setter Property="Focusable" Value="False"/>
                         <Setter Property="Background" Value="{StaticResource darktext900}"/>
                     </Style>
-                    
-                    
                 </DataGrid.RowStyle>
-                
-                
             </DataGrid>
-            
-            
         </Border>
     </Grid>
 </UserControl>

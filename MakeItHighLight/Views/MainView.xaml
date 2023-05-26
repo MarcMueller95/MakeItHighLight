@@ -14,9 +14,6 @@
         ResizeMode="CanResize"
         SizeChanged="Window_SizeChanged"
         >
-
-
-
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
@@ -24,17 +21,12 @@
         />
     </WindowChrome.WindowChrome>
     <Window.Resources>
-
     </Window.Resources>
-
     <Border
             BorderThickness="0.1"
             x:Name="BorderWindow"
             BorderBrush="{StaticResource color2}"
             >
-
-
-
         <!--<Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="{StaticResource purpleneon3}" Offset="0"/>
@@ -42,28 +34,17 @@
                 <GradientStop Color="{StaticResource redneon}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>-->
-
-
-
         <Grid>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
-
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
-
-
                 <Border Background="{StaticResource darktext1200}" CornerRadius="0,0,0,0" Grid.Column="0" BorderThickness="0">
-
-
-
                     <StackPanel>
                         <!--Logo-->
                         <StackPanel Orientation="Horizontal" Height="50" Margin="15,25,0,40">
@@ -79,19 +60,14 @@
                         </StackPanel>
                         <!--Menu Button 1-->
                         <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color5}"
-                                 
+                                 Tag="{StaticResource color5}"                                 
                                  Command="{Binding ShowOverviewViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
-                                <TextBlock 
-                                
-                                
+                                <TextBlock                                                            
                                 Text="Overview" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
-
-
                         <!--Menu Button 2-->
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}"
@@ -101,8 +77,6 @@
                                 <TextBlock Text="Import" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
-
-
                         <!--Menu Button 3-->
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}"
@@ -112,9 +86,6 @@
                                 <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
-
-
-
                         <!--Menu Button 4-->
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}"
@@ -124,15 +95,9 @@
                                 <TextBlock Text="Help &amp; About" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
-
                     </StackPanel>
-
-
                 </Border>
-
-
                 <Border Background="{StaticResource darktext1100}" CornerRadius="0,0,0,0" Grid.Column="1" Grid.Row="0">
-
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
@@ -147,49 +112,35 @@
                                 Margin="0,0,1,0"
                                 MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
                                 MouseEnter="pnlControlBar_MouseEnter">
-
-
                             <!--Control Buttons -->
                             <Button x:Name="btnClose"
                                 Style="{StaticResource controlButton}"
                                 Tag="{StaticResource color4}"
                                 Click="btnClose_Click_1">
                                 <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
-
-
                             </Button>
-
                             <Button x:Name="btnMaximize"
                                 Style="{StaticResource controlButton}"
                                 Tag="{StaticResource color4}"
                                 Click="btnMaximize_Click">
                                 <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
-
-
                             </Button>
-
                             <Button x:Name="btnMinimize"
                                 Style="{StaticResource controlButton}"
                                 Tag="{StaticResource color4}"
                                 Click="btnMinimize_Click"
                                 >
                                 <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
-
-
                             </Button>
                         </StackPanel>
                         <!--ChildView-->
-
-
-
                         <!--Icon + Caption-->
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0"
-                             
+                            <StackPanel Grid.Column="0"                            
                                 Orientation="Horizontal"
                                 VerticalAlignment="Center">
                                 <fa:IconImage Icon="{Binding Icon}"
@@ -204,60 +155,35 @@
                                    FontSize="22"
                                    FontFamily="Monsterrat"
                                    FontWeight="Medium"/>
-
                             </StackPanel>
                         </Grid>
-                        
-                        
                         <!--ContentControl-->
-                        
                         <ContentControl Content="{Binding CurrentChildView }"
                                     Grid.Row="2"
                                     Margin="25">
                             <ContentControl.Resources>
-
-
-
                                 <DataTemplate DataType="{x:Type viewModel:OverviewViewModel}">
                                     <views:OverviewView DataContext="{DynamicResource OverviewViewModel}" />
                                 </DataTemplate>
-
                                 <DataTemplate DataType="{x:Type viewModel:ImportViewModel}">
                                     <views:ImportView DataContext="{DynamicResource ImportViewModel}"/>
                                 </DataTemplate>
-
                                 <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                                     <views:SettingsView/>
                                 </DataTemplate>
-
                                 <DataTemplate DataType="{x:Type viewModel:HelpAndAboutViewModel}">
                                     <views:HelpAndAboutView  DataContext="{DynamicResource HelpViewModel}"/>
-
                                 </DataTemplate>
-
-
                                 <DataTemplate DataType="{x:Type viewModel:StartupViewModel}">
                                     <views:StartupView />
                                 </DataTemplate>
                             </ContentControl.Resources>
                         </ContentControl>
-
-
-
                     </Grid>
                 </Border>
-
-
-
-
             </Grid>
-
-
             <!--Action Menu-->
-
             <Border Background="{StaticResource darktext1200}" CornerRadius="0,0,0,0" Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,0">
-
-
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,05">
                         <GradientStop Color="{StaticResource dark1000}" Offset="0"/>
@@ -265,16 +191,7 @@
                         <GradientStop Color="{StaticResource dark1000}" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.BorderBrush>
-
-
-
-
-
-
-
-
                 <Grid>
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="*"/>
@@ -284,12 +201,9 @@
                         <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsStartBtnVisible}" Command="{Binding StartMainFuncCommand}" Style="{StaticResource startbutton}" Margin="15,0,15,0" />
                         <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsStopBtnVisible}"  Command="{Binding StopMainFuncCommand}" Style="{StaticResource stopbutton}" Margin="25,0,15,0" />
                         <Button  Grid.Row="13" Grid.Column="1"  IsEnabled="{Binding IsClearBtnVisible}" Command="{Binding ClearListCommand}" Style="{StaticResource clearbutton}" />
-
-
                     </StackPanel>
                     <!--Progressbar-->
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
-
                         <ProgressBar Margin="0,0,0,0" MinWidth="500" Height="15" Background="{StaticResource darktext1100}"
                                      BorderThickness="0"    
                                      Value="{Binding ProgressbarValue}"
@@ -297,26 +211,13 @@
                                      IsEnabled="{Binding IsProgressDone}"
                                      Style="{StaticResource IsDoneProgress}"
                                      />
-
                         <Label Margin="15,0,0,0" Content="{Binding ProgressbarValue}" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
                         <Label Content="/" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
                         <Label Content="{Binding ProgressbarMax}" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
                         <Label Content="Track/s done" FontSize="12" FontFamily="Monsterrat" FontWeight="Medium" Foreground="{StaticResource yellow}"/>
-
-
                     </StackPanel>
                 </Grid>
-
             </Border>
-
-
-
-
         </Grid>
-
-
     </Border>
-
-
-
 </Window>

@@ -16,8 +16,6 @@ namespace MakeItHighLight.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-
-
         #region Fields
         private readonly Communicater _communicator;
         private ViewModelBase _currentChildView;
@@ -34,15 +32,12 @@ namespace MakeItHighLight.ViewModels
         private bool _isStopBtnActive = false;
         #endregion
         #region Properties
-
-
         #region Property Childview
         public OverviewViewModel OverviewViewModel { get; }
         public SettingsViewModel SettingsViewModel { get; }
         public ImportViewModel ImportViewModel { get; }
         public HelpAndAboutViewModel HelpAndAboutViewModel { get; }
         public StartupViewModel Startup { get; }
-
         #endregion
         #region Property CurrentChildView
         public ViewModelBase CurrentChildView
@@ -52,7 +47,6 @@ namespace MakeItHighLight.ViewModels
             {
                 _currentChildView = value;
                 OnPropertyChanged(nameof(CurrentChildView));
-
             }
         }
         public string Caption
@@ -74,133 +68,86 @@ namespace MakeItHighLight.ViewModels
             }
         }
         #endregion
-
-
+        #region Btn and Progressbar
         public bool IsStartBtnVisible
         {
             get
             {
-
-
-
                 return _isStartBtnVisible;
-
             }
             set
             {
                 _isStartBtnVisible = value;
-
                 OnPropertyChanged(nameof(IsStartBtnVisible));
-
-
             }
-
         }
-
         public bool IsStopBtnActive
         {
             get
             {
-
-
                 return _isStopBtnActive;
-
             }
             set
             {
                 _isStopBtnActive = value;
-
                 OnPropertyChanged(nameof(IsStopBtnActive));
-
-
             }
         }
         public bool IsProgressDone
         {
             get
             {
-
-
                 return _isProgressDone;
-
             }
             set
             {
                 _isProgressDone = value;
-
                 OnPropertyChanged(nameof(IsProgressDone));
-
-
             }
         }
         public bool IsStopBtnVisible
         {
             get
             {
-
-                
-
                 return _isStopBtnVisible;
-
             }
             set
             {
                 _isStopBtnVisible = value;
-
                 OnPropertyChanged(nameof(IsStopBtnVisible));
-
-
             }
         }
-
         public bool IsClearBtnVisible
         {
             get
             {
-
-     
-
                 return _isClearBtnVisible;
-
             }
             set
             {
                 _isClearBtnVisible = value;
-
                 OnPropertyChanged(nameof(IsClearBtnVisible));
-
-
             }
-
         }
-
         public ObservableCollection<Track> Tracks
         {
-
             get => _tracks;
             set
             {
-
                 _tracks = value;
                 OnPropertyChanged();
                 UpdateOverviewCommand.Execute(Tracks);
-
-
-
             }
         }
-
-        public Settings Settings {
+        public Settings Settings
+        {
             get => _settings;
             set
             {
                 _settings = value;
-                OnPropertyChanged();          
+                OnPropertyChanged();
             }
         }
-
-    
-
         public int ProgressbarValue
         {
             get { return _progressbarvalue; }
@@ -210,7 +157,6 @@ namespace MakeItHighLight.ViewModels
                 OnPropertyChanged(nameof(ProgressbarValue));
             }
         }
-
         public int ProgressbarMax
         {
             get
@@ -224,7 +170,7 @@ namespace MakeItHighLight.ViewModels
 
             }
         }
-
+        #endregion
         #region Property Commands
         public ICommand ShowOverviewViewCommand { get; }
         public ICommand ShowImportViewCommand { get; }
@@ -234,20 +180,10 @@ namespace MakeItHighLight.ViewModels
         public ICommand ShowSettingsViewCommand { get; }
         public ICommand StopMainFuncCommand { get; }
         public ICommand ClearListCommand { get; }
-        
-
-
-
         public ICommand UpdateOverviewCommand { get; }
         #endregion
-
-
-
         #endregion
         #region Constructor
-
-
-
         public MainViewModel(Communicater communicator,
                              OverviewViewModel overviewViewModel,
                              SettingsViewModel settingsViewModel,
@@ -256,7 +192,6 @@ namespace MakeItHighLight.ViewModels
                              StartupViewModel startupViewModel
                             )
         {
-
             _communicator = communicator;
             OverviewViewModel = overviewViewModel;
             SettingsViewModel = settingsViewModel;
@@ -264,7 +199,6 @@ namespace MakeItHighLight.ViewModels
             HelpAndAboutViewModel = helpAndAboutViewModel;
             Startup = startupViewModel;
             CurrentChildView = Startup;
-
             ShowOverviewViewCommand = new ViewModelCommandBase(ExecuteShowOverviewViewCommand);
             ShowImportViewCommand = new ViewModelCommandBase(ExecuteShowImportViewCommand);
             ShowHelpViewCommand = new ViewModelCommandBase(ExecuteShowHelpAndAboutViewCommand);
@@ -273,18 +207,11 @@ namespace MakeItHighLight.ViewModels
             StartMainFuncCommand = new MainCutCommand(this);
             ClearListCommand = new ClearListCommand(this, communicator);
             UpdateOverviewCommand = new UpdateMainTrackFullCommand(this, communicator);
-
             _communicator.TrackCom += UpdateTrackList;
             _communicator.DropTrackCom += UpdateProgessMax;
             _communicator.SettingsCom += UpdateSettings;
-
             this.GetSettings();
-
         }
-
-
-
-
         #endregion
         #region Methods
         private void UpdateTrackList(Track track)
@@ -300,21 +227,17 @@ namespace MakeItHighLight.ViewModels
                 tracks.Add(item);
             }
             Tracks = tracks;
-       
-
         }
         private void UpdateProgessMax(int i)
         {
             ProgressbarMax = i;
-        } 
+        }
         private void UpdateSettings(Settings settings)
         {
             Settings = settings;
         }
-
         public void GetSettings()
         {
-
             if (Services.JsonService.ReadJsonFile() != null)
                 Settings = Services.JsonService.ReadJsonFile();
             else { Settings = new Settings(); }
@@ -358,8 +281,5 @@ namespace MakeItHighLight.ViewModels
 
 
         #endregion
-
-
-
     }
 }

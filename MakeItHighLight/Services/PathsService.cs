@@ -60,7 +60,6 @@ namespace MakeItHighLight.Services
             }
             return final;
         }
-
         internal static string ReplaceForbiddenChars(string final)
         {
             while (final.Contains("?"))
@@ -91,7 +90,6 @@ namespace MakeItHighLight.Services
             {
                 final = final.Replace(">", "");
             }
-
             char rep = (char)39;
             while (final.Contains('"'))
             {

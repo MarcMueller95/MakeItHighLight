@@ -10,10 +10,8 @@
     <Color x:Key="winBorderColor1">#6D2FFF</Color>
     <Color x:Key="winBorderColor2">#FB539B</Color>
     <Color x:Key="winBorderColor3">#836EFB</Color>
-   
-    
-    
-    
+    <Color x:Key="Color2">#784DFD</Color>
+
     <!--Color Palette-->
     <SolidColorBrush x:Key="color1" Color="#E285DE"/>
     <SolidColorBrush x:Key="color2" Color="#784DFD"/>
@@ -26,7 +24,6 @@
     <SolidColorBrush x:Key="color9" Color="#07F3C0"/>
     <SolidColorBrush x:Key="color10" Color="#FBA1AA"/>
     <SolidColorBrush x:Key="color11" Color="#8F0000"/>
-
     <!--Font Colors-->
     <SolidColorBrush x:Key="titleColor1" Color="#E0E1F1"/>
     <SolidColorBrush x:Key="titleColor2" Color="#D5CFF5"/>
@@ -38,38 +35,22 @@
     <SolidColorBrush x:Key="panelColor" Color="#200F53"/>
     <SolidColorBrush x:Key="panelOverColor" Color="#281269"/>
     <SolidColorBrush x:Key="panelActiveColor" Color="#2B1372"/>
-    <!--Button Colors-->
-    <!--TextBox Colors-->
-    <!--Etc-->
-
-
-
-
-    <!--Custom Colors-->
-
     <Color x:Key="Color2">#784DFD</Color>
-
     <!--Dark Theme Colors-->
     <Color x:Key="dark1200">#121212</Color>
     <Color x:Key="dark1000">#24292e</Color>
     <Color x:Key="dark900">#383F45</Color>
     <Color x:Key="dark800">#454c52</Color>
     <Color x:Key="dark700">#596066</Color>
-
-
- <!--Special Colors-->
+    <!--Special Colors-->
     <Color x:Key="redneon">#DE350B</Color>
     <Color x:Key="redlogo">#dc2453</Color>
     <Color x:Key="redrose">#ff5252</Color>
-
     <Color x:Key="redneon1">#D22779</Color>
     <Color x:Key="redneon2">#FF1E1E</Color>
     <Color x:Key="purpleneon3">#AE00FB</Color>
     <Color x:Key="yellowc">#FFCC6B</Color>
     <Color x:Key="redorangelight">#ff6666</Color>
-
-
-
     <SolidColorBrush x:Key="darktext700" Color="#596066"/>
     <SolidColorBrush x:Key="darktext800" Color="#454c52"/>
     <SolidColorBrush x:Key="darktext1000" Color="#24292e"/>
@@ -79,14 +60,7 @@
     <SolidColorBrush x:Key="yellow" Color="#FFCC6B"/>
     <SolidColorBrush x:Key="green" Color="#34e718"/>
     <SolidColorBrush x:Key="greendark" Color="#287e29"/>
- 
-
-
-
-
-
     <!--Dark Red-->
-  
     <SolidColorBrush x:Key="redlogotext" Color="#dc2453"/>
     <SolidColorBrush x:Key="reddark400" Color="#e50000"/>
     <SolidColorBrush x:Key="reddark500" Color="#cc0000"/>
@@ -94,12 +68,9 @@
     <SolidColorBrush x:Key="reddark700" Color="#a70000"/>
     <SolidColorBrush x:Key="reddark800" Color="#990000"/>
     <SolidColorBrush x:Key="reddark900" Color="#7f0000"/>
-
     <!--Light Red-->
     <SolidColorBrush x:Key="redlight600" Color="#ff7f7f"/>
     <SolidColorBrush x:Key="redlightk700" Color="#ff6666"/>
     <SolidColorBrush x:Key="redlight800" Color="#ff4c4c"/>
     <SolidColorBrush x:Key="redlight900" Color="#ff3232"/>
-
-
 </ResourceDictionary>

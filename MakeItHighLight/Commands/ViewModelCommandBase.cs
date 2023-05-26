@@ -11,20 +11,17 @@ namespace MakeItHighLight.Commands
     {
         private readonly Action<object> _executeAction;
         private readonly Predicate<object> _canExecuteAction;
-
         //Constructors
         public ViewModelCommandBase(Action<object> executeAction)
         {
             _executeAction = executeAction;
             _canExecuteAction = null;
         }
-
         public ViewModelCommandBase(Action<object> executeAction, Predicate<object> canExecuteAction)
         {
             _executeAction = executeAction;
             _canExecuteAction = canExecuteAction;
         }
-
         //Events
         public event EventHandler CanExecuteChanged
         {
@@ -40,7 +37,6 @@ namespace MakeItHighLight.Commands
         {
             return _canExecuteAction == null ? true : _canExecuteAction(parameter);
         }
-
         public virtual void Execute(object parameter)
         {
             _executeAction(parameter);

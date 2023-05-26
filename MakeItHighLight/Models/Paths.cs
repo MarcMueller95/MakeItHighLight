@@ -24,8 +24,6 @@ namespace MakeItHighLight.Models
         public string Temppath2 { get; set; }
         public string Temppath3 { get; set; }
         public string Temppath4 { get; set; }
-
-
         public Paths(Track track, Settings settings)
         {
             Finalpath = settings.DestinationFolderPersistent + "\\";
@@ -41,7 +39,6 @@ namespace MakeItHighLight.Models
             }
             catch (Exception)
             {
-
                 Title = track.Title;
             }
             Genre = track.Tag.Genrelist[0];
@@ -54,7 +51,7 @@ namespace MakeItHighLight.Models
         {
             string final = Services.PathsService.PrepareArtistList(track.Tag.Artistlist);
             final = $"{final} - {Services.ExtensionMethodService.CapIt(track.Tag.Title)} ({track.Tag.Year}) {track.Tag.Genrelist[0]} ({track.Tag.Bitrate} kbit).wav";
-            return Services.PathsService.ReplaceForbiddenChars(final);        
+            return Services.PathsService.ReplaceForbiddenChars(final);
         }
 
         internal List<string> CreateDirectorieStructureForPath(Settings settings, string kbit)
@@ -63,13 +60,7 @@ namespace MakeItHighLight.Models
             if (kbit != "0")
             {
                 Finalpath += kbit + " Kbit\\";
-
-
-
-
-
                 directories.Add(Finalpath);
-
                 if (settings.FadeIn && settings.FadeOut)
                 {
                     Finalpath += FileAndDirectoryService.s_FadeInandOutFolder;
@@ -88,22 +79,17 @@ namespace MakeItHighLight.Models
                         {
                             Finalpath += FileAndDirectoryService.s_FadeOutFolder;
                             directories.Add(Finalpath);
-
                         }
                         else
                         {
                             Finalpath += FileAndDirectoryService.s_UnfadedFolder;
                             directories.Add(Finalpath);
-
                         }
                     }
-
-
                 }
             }
-
             return directories;
         }
     }
-    }
+}
 

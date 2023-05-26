@@ -18,9 +18,7 @@ namespace MakeItHighLight.ViewModels
     public class OverviewViewModel : ViewModelBase
     {
         private readonly Communicater _communicator;
-
         private ObservableCollection<Track> _tracks = new ObservableCollection<Track>();
-
         public OverviewViewModel(Communicater communicater)
         {
             _communicator = communicater;
@@ -28,27 +26,19 @@ namespace MakeItHighLight.ViewModels
             _communicator.TrackListCom += OnMainListGet;
             _communicator.ClearActiveCom += OnClearActivated;
         }
-
         public ICommand DropTrackCommand { get; }
-
-
-
         private void OnClearActivated(bool b)
         {
             Tracks.Clear();
             OnPropertyChanged(nameof(Tracks));
         }
-
         public ObservableCollection<Track> Tracks
         {
-
             get => _tracks;
             set
             {
-
                 _tracks = value;
                 this.OnPropertyChanged();
-
             }
         }
         private void OnMainListGet(ObservableCollection<Track> tracks)
@@ -62,23 +52,15 @@ namespace MakeItHighLight.ViewModels
             Tracks = songs;
             OnPropertyChanged(nameof(Tracks));
         }
-
-
-
         public async Task ExecuteListDrop(DragEventArgs e)
         {
-
             List<string> sortedList;
             ObservableCollection<Track> tracks = new ObservableCollection<Track>();
             int counter = 1;
-
-
             await Task.Run(async () =>
             {
                 if ((sortedList = Services.FileAndDirectoryService.SortFilestoMP3andWav(e)) != null)
                 {
-
-
                     foreach (var item in sortedList)
                     {
 
@@ -92,15 +74,9 @@ namespace MakeItHighLight.ViewModels
                             => DropTrackCommand.Execute(counter)));
                         counter++;
                     }
-
                 }
-
             });
-
             this.Tracks = tracks;
-    
-
         }
-
     }
 }

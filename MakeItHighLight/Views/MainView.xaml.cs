@@ -25,65 +25,44 @@ namespace MakeItHighLight.Views
     {
         public MainView()
         {
-            InitializeComponent();
-
-          
-
+            InitializeComponent();          
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
             WindowInteropHelper helper = new WindowInteropHelper(this);
             SendMessage(helper.Handle, 161, 2, 0);
-
         }
-
         private void pnlControlBar_MouseEnter(object sender, MouseEventArgs e)
         {
             this.MaxHeight = (SystemParameters.MaximizedPrimaryScreenHeight-1);
-            this.MaxWidth = (SystemParameters.MaximizedPrimaryScreenWidth - 7);
-           
-            
+            this.MaxWidth = (SystemParameters.MaximizedPrimaryScreenWidth - 7);                      
         }
-
-
-
         private void btnClose_Click_1(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
                 this.WindowState = WindowState.Maximized;
             else this.WindowState = WindowState.Normal;
-
-
-
-
         }
-
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
             {
                 BorderWindow.BorderThickness = new Thickness(6, 6, 0, 0);
-
             }
             else
             {
-
                 BorderWindow.BorderThickness = new Thickness(1, 1, 1, 1);
             }
         }
-
     }
 }

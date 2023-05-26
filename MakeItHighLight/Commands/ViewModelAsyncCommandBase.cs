@@ -10,17 +10,14 @@ namespace MakeItHighLight.Commands
     public abstract class ViewModelAsyncCommandBase :ICommand
     {
         public event EventHandler? CanExecuteChanged;
-
         public bool CanExecute(object parameter)
         {
             return true;
         }
-
         public async void Execute(object parameter)
         {
             await ExecuteAsync(parameter);
         }
         protected abstract Task ExecuteAsync(object parameter);
-
     }
 }

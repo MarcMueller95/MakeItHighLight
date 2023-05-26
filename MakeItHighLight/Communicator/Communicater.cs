@@ -10,21 +10,15 @@ namespace MakeItHighLight.Communicator
 {
     public class Communicater
     {
-
         public event Action<int> DropTrackCom;
         public event Action<Track> TrackCom;
         public event Action<Settings> SettingsCom;
         public event Action<bool> ClearActiveCom;
-
-
-
         public event Action<ObservableCollection<Track>> TrackListCom;
-
         public void TrackDropProcess(int i)
         {
             DropTrackCom?.Invoke(i);
         }
-
         public void AddTrackCom(Track track)
         {
             TrackCom?.Invoke(track);
@@ -33,7 +27,6 @@ namespace MakeItHighLight.Communicator
         {
             TrackListCom?.Invoke(track);
         }
-
         public void GetSettings(Settings settings)
         {
             SettingsCom?.Invoke(settings);
@@ -42,6 +35,5 @@ namespace MakeItHighLight.Communicator
         {
             ClearActiveCom?.Invoke(true);
         }
-
     }
 }

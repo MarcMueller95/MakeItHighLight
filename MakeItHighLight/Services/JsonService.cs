@@ -11,25 +11,16 @@ namespace MakeItHighLight.Services
 {
     public class JsonService
     {
-
-
         public static async Task SaveJsonFile(Settings settings)
         {
-
             string fileName = "Settings.json";
             using FileStream createStream = File.Create(fileName);
             await JsonSerializer.SerializeAsync(createStream, settings);
             await createStream.DisposeAsync();
-
-
-
-
         }
-
         public static Settings ReadJsonFile()
         {
             string fileName = "Settings.json";
-
             try
             {
                 using FileStream openStream = File.OpenRead(fileName);
@@ -41,10 +32,6 @@ namespace MakeItHighLight.Services
             {
                 return null;
             }
-
-
-
         }
-
     }
 }

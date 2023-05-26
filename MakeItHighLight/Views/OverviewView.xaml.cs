@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace MakeItHighLight.Views
 {
-    /// <summary>
-    /// Interaktionslogik für Overview.xaml
-    /// </summary>
     public partial class OverviewView : UserControl
     {
         public OverviewView()
@@ -28,8 +25,6 @@ namespace MakeItHighLight.Views
         private async void Overview_Drop(object sender, DragEventArgs e)
         {
            await ((OverviewViewModel)this.DataContext).ExecuteListDrop(e);
-
-
         }
     }
 }

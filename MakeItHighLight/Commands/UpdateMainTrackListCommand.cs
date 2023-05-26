@@ -15,13 +15,11 @@ namespace MakeItHighLight.Commands
         private readonly ImportViewModel _viewModel2;
         private readonly MainViewModel _viewModel3;
         private readonly Communicater _communicater;
-
         public UpdateMainTrackListCommand(OverviewViewModel viewModel, Communicater communicater)
         {
             _viewModel = viewModel;
             _communicater = communicater;
         }
-
         public UpdateMainTrackListCommand(ImportViewModel viewModel, Communicater communicater)
         {
             _viewModel2 = viewModel;
@@ -32,15 +30,10 @@ namespace MakeItHighLight.Commands
             _viewModel3 = viewModel;
             _communicater = communicater;
         }
-
         public override void Execute(object track)
         {
             Track b = (Track)track;
             _communicater.AddTrackCom(b);
-
-
         }
-
-
     }
 }

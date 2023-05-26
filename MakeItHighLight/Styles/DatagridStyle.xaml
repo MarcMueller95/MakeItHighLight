@@ -21,11 +21,7 @@
         <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
         <Setter Property="ColumnHeaderStyle" Value="{DynamicResource DataGridHeaderStyled}"/>
         <Setter Property="AllowDrop" Value="True"/>
-        
-     
-        
     </Style>
-
     <Style x:Key="SaturdayCellStyle" TargetType="DataGridCell">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
@@ -35,10 +31,7 @@
             </Trigger>
         </Style.Triggers>
         <Setter Property="Focusable" Value="False"/>
-
     </Style>
-
-
     <Style x:Key="DataGridHeaderStyled" TargetType="DataGridColumnHeader">
         <Setter Property="BorderBrush" Value="{StaticResource color5}" />
         <Setter Property="BorderThickness" Value="1,0,1,0" />
@@ -49,10 +42,4 @@
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="HorizontalContentAlignment" Value="Center" />
     </Style>
-
-   
-
-
-
-
 </ResourceDictionary>

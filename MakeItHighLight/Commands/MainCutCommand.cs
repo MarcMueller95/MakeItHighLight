@@ -13,30 +13,19 @@ namespace MakeItHighLight.Commands
 {
     public class MainCutCommand : ViewModelAsyncCommandBase
     {
-
         private readonly MainViewModel _mainviewmodel;
-
         public MainViewModel Mainviewmodel { get; set; }
-
         public MainCutCommand(MainViewModel mainviewmodel)
         {
             _mainviewmodel = mainviewmodel;
             Mainviewmodel = mainviewmodel;
         }
-
         protected override async Task ExecuteAsync(object parameter)
         {
-
             Prepare();
-
             await Main();
-
             End();
-
-
-
         }
-
         private void End()
         {
             ProgressbarDone(true);
@@ -62,25 +51,14 @@ namespace MakeItHighLight.Commands
                 await Services.FileAndDirectoryService.DeleteTempData(Mainviewmodel.Settings, paths);
             }
         }
-
         private async Task<Paths> DoHighlightAndFades(Track item, Settings settings)
         {
-
-
-
-
-
-
-
             long[] firstAndLastSample = new long[2];
             Paths paths = new Paths(item, settings);
             if (settings.Genres)
-
                 paths.IsGenreDir = true;
             List<string> directories = paths.CreateDirectorieStructureForPath(settings, item.Kbit);
             Services.FileAndDirectoryService.CreateDirectories(directories, paths.Genre, paths);
-
-
             // Both
             if (settings.FadeIn && settings.FadeOut)
             {
@@ -88,22 +66,15 @@ namespace MakeItHighLight.Commands
                 {
                     firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
                 }
-
                 else
                 {
                     firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
 
                 }
-
-
-
                 await Services.TrackDataService.FadeInAndOut(paths.Temppath4 + paths.Title, paths, item, settings);
-
-
             }
             else
             {
-
                 // FadeOut
                 if (settings.FadeOut && settings.FadeIn == false)
                 {
@@ -111,13 +82,10 @@ namespace MakeItHighLight.Commands
                     {
                         firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
                     }
-
                     else
                     {
                         firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
-                        //await Services.TrackDataService.TrimFile()
                     }
-
                     Services.TrackDataService.FadeOut(paths.Temppath4 + paths.Title, paths, item, settings);
                 }
                 // FadeIn
@@ -127,12 +95,10 @@ namespace MakeItHighLight.Commands
                     {
                         firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, true);
                     }
-
                     else
                     {
                         firstAndLastSample = await Services.TrackDataService.HighLight(item, paths, settings, false);
                     }
-
                     Services.TrackDataService.FadeIn(paths.Temppath4 + paths.Title, paths, item, settings);
                 }
                 // unfaded
@@ -151,17 +117,12 @@ namespace MakeItHighLight.Commands
             Services.TrackDataService.ConvertToMp3(item, paths);
             await item.Tag.TagsToPath(paths.Finalpath);
             return paths;
-
         }
-
         private void Prepare()
         {
-
             ButtonhandlingStart();
             ProgressbarPreparation(Mainviewmodel.OverviewViewModel.Tracks.Count);
-
         }
-
         private void ProgressbarPreparation(int count)
         {
             Mainviewmodel.ProgressbarMax = count;
@@ -180,7 +141,6 @@ namespace MakeItHighLight.Commands
         {
             _mainviewmodel.IsProgressDone = b;
         }
-
         private void ButtonhandlingStart()
         {
             Mainviewmodel.IsStartBtnVisible = false;

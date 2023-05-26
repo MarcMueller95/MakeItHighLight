@@ -13,6 +13,6 @@
         <TextBlock Text="Drag and drop your music files ( with Meta Tags )" Margin="0,0,0,0" FontSize="30" TextAlignment="Center" Foreground="{StaticResource yellow}"/>
         <TextBlock Text="inside the f.e. OverView Tab" Margin="0,0,0,0" FontSize="30" TextAlignment="Center" Foreground="{StaticResource yellow}"/>
         </StackPanel>
-      
+     
     </Grid>
 </UserControl>

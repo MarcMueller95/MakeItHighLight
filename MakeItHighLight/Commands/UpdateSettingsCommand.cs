@@ -11,24 +11,17 @@ namespace MakeItHighLight.Commands
 {
     public class UpdateSettingsCommand : ViewModelCommandBase
     {
-
-        private readonly SettingsViewModel _viewModel;
-      
+        private readonly SettingsViewModel _viewModel;      
         private readonly Communicater _communicater;
-
         public UpdateSettingsCommand(SettingsViewModel viewModel, Communicater communicater)
         {
             _viewModel = viewModel;
             _communicater = communicater;
-        }
-
-      
+        }    
         public override void Execute(object parameter)
         {
             Settings settings  = (Settings)parameter;
             _communicater.GetSettings(settings);
-
         }
-
     }
 }

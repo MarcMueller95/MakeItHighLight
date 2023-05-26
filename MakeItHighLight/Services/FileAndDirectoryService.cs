@@ -13,22 +13,16 @@ namespace MakeItHighLight.Services
         public static readonly string s_StarDotStar = "*.*";
         public static readonly string s_DotCapWav = ".WAV";
         public static readonly string s_DotCapMp3 = ".MP3";
-
-
-
         public static readonly string s_CutFolder = "Cut\\";
         public static readonly string s_UncutFolder = "Uncut\\";
         public static readonly string s_FadeInFolder = "Fade In\\";
         public static readonly string s_FadeOutFolder = "Fade Out\\";
         public static readonly string s_FadeInandOutFolder = "FadeIn & Out\\";
         public static readonly string s_UnfadedFolder = "Unfaded\\";
-
-
         public static List<string> SortFilestoMP3andWav(System.Windows.DragEventArgs e)
         {
             if (e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop))
             {
-
                 var files = (string[])e.Data.GetData(System.Windows.DataFormats.FileDrop);
                 var importList = new List<string>();
                 foreach (string items in files)
@@ -49,10 +43,7 @@ namespace MakeItHighLight.Services
                     }
                 return importList;
             }
-
             return null;
-
-
         }
         public static async Task DeleteTempData(Settings settings, Paths? pathing)
         {
@@ -65,17 +56,12 @@ namespace MakeItHighLight.Services
             paths.Add(temppath + "temp3\\");
             if (pathing != null)
                 paths.Add(pathing.FinalpathDir);
-
             await DeleteTempThroughPathList(paths);
-
-
         }
-
         public static async Task DeleteTempThroughPathList(List<string> list)
         {
             try
             {
-
                 await Task.Run(() =>
                 {
                     foreach (var item in list)
@@ -84,25 +70,13 @@ namespace MakeItHighLight.Services
                         {
                             System.IO.File.Delete(sFile);
                         }
-
                     }
-
                 });
-
-
-
-
             }
             catch (Exception)
             {
-
             }
-
-
-
-
         }
-
         internal static void CreateDirectories(List<string> directories, string genre, Paths paths)
         {
             System.IO.Directory.CreateDirectory(paths.Temppath);
@@ -114,13 +88,10 @@ namespace MakeItHighLight.Services
                 System.IO.Directory.CreateDirectory(item);
 
             }
-
             if (paths.IsGenreDir)
             {
                 System.IO.Directory.CreateDirectory(directories.Last() + genre + "\\");
             }
-
-
         }
     }
 }

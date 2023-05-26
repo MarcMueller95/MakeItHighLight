@@ -16,7 +16,6 @@ namespace MakeItHighLight.Services
             FullVolume,
             FadingOut,
         }
-
         private readonly object lockObject = new object();
         private readonly ISampleProvider source;
         private int fadeSamplePosition;
@@ -24,7 +23,6 @@ namespace MakeItHighLight.Services
         private int fadeOutDelaySamples;
         private int fadeOutDelayPosition;
         private FadeState fadeState;
-
         /// <summary>
         /// Creates a new FadeInOutSampleProvider
         /// </summary>
@@ -35,7 +33,6 @@ namespace MakeItHighLight.Services
             this.source = source;
             this.fadeState = initiallySilent ? FadeState.Silence : FadeState.FullVolume;
         }
-
         /// <summary>
         /// Requests that a fade-in begins (will start on the next call to Read)
         /// </summary>
@@ -49,7 +46,6 @@ namespace MakeItHighLight.Services
                 fadeState = FadeState.FadingIn;
             }
         }
-
         /// <summary>
         /// Requests that a fade-out begins (will start on the next call to Read)
         /// </summary>
@@ -62,11 +58,9 @@ namespace MakeItHighLight.Services
                 fadeSampleCount = (int)((fadeDurationInMilliseconds * source.WaveFormat.SampleRate) / 1000);
                 fadeOutDelaySamples = (int)((fadeAfterMilliseconds * source.WaveFormat.SampleRate) / 1000);
                 fadeOutDelayPosition = 0;
-
                 //fadeState = FadeState.FadingOut;
             }
         }
-
         /// <summary>
         /// Reads samples from this sample provider
         /// </summary>
@@ -77,7 +71,6 @@ namespace MakeItHighLight.Services
         public int Read(float[] buffer, int offset, int count)
         {
             int sourceSamplesRead = source.Read(buffer, offset, count);
-
             lock (lockObject)
             {
                 if (fadeOutDelaySamples > 0)
@@ -90,7 +83,6 @@ namespace MakeItHighLight.Services
                         int fadeOutSamples = (fadeOutDelayPosition - fadeOutDelaySamples) * WaveFormat.Channels;
                         // apply the fade-out only to the samples after fadeOutDelayPosition
                         FadeOut(buffer, offset + normalSamples, fadeOutSamples);
-
                         fadeOutDelaySamples = 0;
                         fadeState = FadeState.FadingOut;
                         return sourceSamplesRead;
@@ -111,7 +103,6 @@ namespace MakeItHighLight.Services
             }
             return sourceSamplesRead;
         }
-
         private static void ClearBuffer(float[] buffer, int offset, int count)
         {
             for (int n = 0; n < count; n++)
@@ -119,7 +110,6 @@ namespace MakeItHighLight.Services
                 buffer[n + offset] = 0;
             }
         }
-
         private void FadeOut(float[] buffer, int offset, int sourceSamplesRead)
         {
             int sample = 0;
@@ -140,7 +130,6 @@ namespace MakeItHighLight.Services
                 }
             }
         }
-
         private void FadeIn(float[] buffer, int offset, int sourceSamplesRead)
         {
             int sample = 0;
@@ -160,7 +149,6 @@ namespace MakeItHighLight.Services
                 }
             }
         }
-
         /// <summary>
         /// WaveFormat of this SampleProvider
         /// </summary>

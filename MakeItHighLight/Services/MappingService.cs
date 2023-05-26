@@ -9,7 +9,7 @@ namespace MakeItHighLight.Services
     {
         internal static async Task<Settings> MapFromSettingVMToSettings(SettingsViewModel vm)
         {
-            Settings settings = new Settings();    
+            Settings settings = new Settings();
             settings.DestinationFolderPersistent = vm.DestinationFolderPersistent;
             settings.Shutdown = vm.Shutdown;
             settings.Genres = vm.Genres;
@@ -21,7 +21,5 @@ namespace MakeItHighLight.Services
             settings.GenreReplStr = vm.GenreReplStr;
             return settings;
         }
-        
-     
     }
 }

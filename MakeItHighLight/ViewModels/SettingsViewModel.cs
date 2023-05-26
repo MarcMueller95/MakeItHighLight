@@ -18,26 +18,18 @@ namespace MakeItHighLight.ViewModels
     {
         private readonly Communicater _communicator;
         private string _destinationFolderPersistent;
-
         private bool _shutdown;
         private bool _genres;
         private bool _fadeOut;
         private int _fadeInSecondsOut;
         private bool _fadeIn;
-
         private int _fadeInSecondsIn;
-
         private bool _FadeInTxtEnabled;
         private bool _FadeOutTxtEnabled;
-
         private bool _genrerepl;
         private string _genrereplstr = "";
         private bool _genrerepltxtenabled;
         private bool _savedboolTxt;
-
-
-
-
         public ICommand SettingSaveCommand { get; }
         public ICommand SettingDestinationFolderPersistentCommand { get; }
         public ICommand SettingShutdownBoolCommand { get; }
@@ -45,8 +37,6 @@ namespace MakeItHighLight.ViewModels
         public ICommand SettingFadeOutBoolCommand { get; }
         public ICommand SettingFadeInBoolCommand { get; }
         public ICommand SettingUpdateSettingCommand { get; }
-
-
         public bool GenreRepl
         {
             get => _genrerepl;
@@ -57,10 +47,8 @@ namespace MakeItHighLight.ViewModels
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(GenreReplTxtEnabled));
                 OnPropertyChanged(nameof(SavedText));
-
             }
         }
-
         public string GenreReplStr
         {
             get => _genrereplstr;
@@ -69,11 +57,9 @@ namespace MakeItHighLight.ViewModels
                 _genrereplstr = value;
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
-
                 OnPropertyChanged();
             }
         }
-
         public bool GenreReplTxtEnabled
         {
             get => GenreRepl;
@@ -83,28 +69,22 @@ namespace MakeItHighLight.ViewModels
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
                 OnPropertyChanged();
-
             }
         }
-
         public bool SavedText
         {
             get => _savedboolTxt;
-
             set
             {
                 _savedboolTxt = value;
-
                 OnPropertyChanged();
             }
         }
-
         public bool Shutdown
         {
             get => _shutdown;
             set
             {
-
                 _shutdown = value;
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
@@ -121,7 +101,6 @@ namespace MakeItHighLight.ViewModels
                 OnPropertyChanged(nameof(SavedText));
                 OnPropertyChanged();
             }
-
         }
         public bool FadeOut
         {
@@ -135,11 +114,6 @@ namespace MakeItHighLight.ViewModels
                 OnPropertyChanged(nameof(FadeOutTxtEnabled));
             }
         }
-
-
-
-
-
         public string FadeInSecondsOut
         {
             get => _fadeInSecondsOut.ToString();
@@ -153,7 +127,6 @@ namespace MakeItHighLight.ViewModels
                 }
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
-
                 OnPropertyChanged();
             }
         }
@@ -180,13 +153,11 @@ namespace MakeItHighLight.ViewModels
                     OnPropertyChanged(nameof(SavedText));
                     FadeInSecondsIn = "0";
                 }
-
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
                 OnPropertyChanged();
             }
         }
-
         public string DestinationFolderPersistent
         {
             get => _destinationFolderPersistent;
@@ -203,10 +174,8 @@ namespace MakeItHighLight.ViewModels
                 {
                     _destinationFolderPersistent = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 }
-
             }
         }
-
         public bool FadeInTxtEnabled
         {
             get => FadeIn;
@@ -227,116 +196,60 @@ namespace MakeItHighLight.ViewModels
                 SavedText = false;
                 OnPropertyChanged(nameof(SavedText));
                 OnPropertyChanged();
-
             }
         }
-
-
-
-
         public SettingsViewModel(Communicater communicater)
         {
             _communicator = communicater;
-
             SettingSaveCommand = new ViewModelCommandBase(ExecuteSettingSaveCommand);
             SettingDestinationFolderPersistentCommand = new ViewModelCommandBase(ExecuteSettingDestinationFolderPersistentCommand);
             SettingUpdateSettingCommand = new UpdateSettingsCommand(this, communicater);
-
-
-
-
-
             ReadJsonSettingToProperties();
-            //if (DestinationFolderPersistent == null)
-            //    DestinationFolderPersistent = System.AppDomain.CurrentDomain.BaseDirectory;
-
-            //SettingSaveCommand = new ViewModelCommand(ExecuteSettingSaveCommand);
-
-            //SettingDestinationFolderPersistentCommand = new ViewModelCommand(ExecuteSettingDestinationFolderPersistentCommand);
-
         }
-
-
-
         private async void ExecuteSettingSaveCommand(object obj)
         {
             SavedText = true;
-
             Settings settings = await Services.MappingService.MapFromSettingVMToSettings(this);
-
             await JsonService.SaveJsonFile(settings);
-
-
-
             await Application.Current.Dispatcher.BeginInvoke(
                            DispatcherPriority.Background,
             new Action(()
                            => SettingUpdateSettingCommand.Execute(settings)));
-
         }
-
         private async void ReadJsonSettingToProperties()
         {
-
             var settings = Services.JsonService.ReadJsonFile();
-
             if (settings == null)
             {
                 settings = new Settings();
-
                 settings.GenreRepl = false;
-
                 settings.GenreReplStr = "";
-
                 settings.Shutdown = false;
-
                 settings.Genres = false;
-
                 settings.FadeOut = false;
-
                 settings.FadeinSecondsIn = "0";
-
                 settings.FadeIn = false;
-
                 settings.FadeinSecondsIn = "0";
-
                 await Services.JsonService.SaveJsonFile(settings);
             }
-
             DestinationFolderPersistent = settings.DestinationFolderPersistent;
-
             Shutdown = settings.Shutdown;
-
             Genres = settings.Genres;
-
             FadeOut = settings.FadeOut;
-
             FadeInSecondsOut = settings.FadeinSecondsIn;
-
             FadeIn = settings.FadeIn;
-
             FadeInSecondsIn = settings.FadeinSecondsIn;
-
             GenreRepl = settings.GenreRepl;
-
             GenreReplStr = settings.GenreReplStr;
-
-
-
-
         }
-
         private void ExecuteSettingDestinationFolderPersistentCommand(object obj)
         {
             var fbd = new System.Windows.Forms.FolderBrowserDialog();
             fbd.ShowDialog();
-            if(!String.IsNullOrEmpty(fbd.SelectedPath))
-            DestinationFolderPersistent = fbd.SelectedPath;
+            if (!String.IsNullOrEmpty(fbd.SelectedPath))
+                DestinationFolderPersistent = fbd.SelectedPath;
             else
                 DestinationFolderPersistent = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-
         }
-
     }
 }
